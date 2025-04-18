@@ -13,6 +13,7 @@ import domain.Reserva;
 import exceptions.RideMustBeLaterThanTodayException;
 import exceptions.SocioNoRegistradoException;
 import exceptions.SocioRegistradoException;
+import exceptions.ErrorPagoException;
 import exceptions.IncorrectPasswordException;
 import exceptions.RideAlreadyExistException;
 
@@ -130,6 +131,12 @@ public interface BLFacade  {
 	 * Metodo que devuelve las facturas no pagadas del socio
 	 */
 	@WebMethod public List<Factura> getFacturas(Socio socio);
+	
+	/**
+	 * Metodo que paga la factura no pagada del socio
+	 */
+	@WebMethod public String pagarFactura(int nfact) throws ErrorPagoException;
+	
 	
 	
 }

@@ -21,6 +21,7 @@ import javax.persistence.TypedQuery;
 
 import configuration.ConfigXML;
 import configuration.UtilDate;
+import domain.API_Banco;
 import domain.Driver;
 import domain.Factura;
 import domain.Reserva;
@@ -29,6 +30,7 @@ import domain.Sesion;
 import domain.Socio;
 import exceptions.RideAlreadyExistException;
 import exceptions.RideMustBeLaterThanTodayException;
+import exceptions.ErrorPagoException;
 import exceptions.IncorrectPasswordException;
 import exceptions.SocioNoRegistradoException;
 import exceptions.SocioRegistradoException;
@@ -443,6 +445,27 @@ public void open(){
 		}		
 		return res;
 	}
+	
+	public String pagarFactura(int nfact) throws ErrorPagoException{
+		Factura f = db.find(Factura.class, nfact);
+		if (f == null) {
+			throw new ErrorPagoException("Factura no encontrada con número: " + nfact);
+		}
+		
+		int precio = f.getPrecioTotal();
+		if (API_Banco.pagar(1234, precio)) {
+			db.getTransaction().begin();
+			f.setEstado("PAGADO");
+			db.getTransaction().commit();
+			return f.getSocioFac().getNombre() + " has pagado la factura: " + nfact;
+		}
+		else {
+			throw new ErrorPagoException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.PagarFactura"));
+		}
+		
+		
+	}
+	
 	
 	
 }

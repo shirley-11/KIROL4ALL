@@ -18,6 +18,7 @@ import exceptions.RideMustBeLaterThanTodayException;
 import exceptions.RideAlreadyExistException;
 import exceptions.SocioNoRegistradoException;
 import exceptions.SocioRegistradoException;
+import exceptions.ErrorPagoException;
 import exceptions.IncorrectPasswordException;
 /**
  * It implements the business logic as a web service.
@@ -188,6 +189,11 @@ public class BLFacadeImplementation  implements BLFacade {
 		List<Factura> facturas = dbManager.getFacturas(socio);
 		dbManager.close();
 		return facturas;
+	}
+	
+	@WebMethod 
+	public String pagarFactura(int nfact) throws ErrorPagoException{
+		return "";
 	}
     
 

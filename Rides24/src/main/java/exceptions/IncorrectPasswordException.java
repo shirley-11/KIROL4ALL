@@ -7,7 +7,7 @@ public class IncorrectPasswordException extends Exception {
 	  {
 	    super();
 	  }
-	  /**Esta excepcion es para cuando los parámteros no está acorde con lo que hay en la base de datos 
+	  /**Esta excepcion es para cuando los parámetros no están acorde con lo que hay en la base de datos 
 	  *@param s String of the exception
 	  */
 	  public IncorrectPasswordException(String s)
