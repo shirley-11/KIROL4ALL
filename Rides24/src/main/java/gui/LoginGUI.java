@@ -27,39 +27,39 @@ public class LoginGUI extends JPanel {
 		JLabel lblIntroducirDatos = new JLabel("Introduce los datos");
 		lblIntroducirDatos.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblIntroducirDatos.setHorizontalAlignment(SwingConstants.CENTER);
-		lblIntroducirDatos.setBounds(198, 79, 191, 41);
+		lblIntroducirDatos.setBounds(181, 70, 191, 41);
 		add(lblIntroducirDatos);
 		
 		JLabel lblCorreo = new JLabel("Correo");
 		lblCorreo.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblCorreo.setHorizontalAlignment(SwingConstants.LEFT);
-		lblCorreo.setBounds(87, 151, 93, 38);
+		lblCorreo.setBounds(87, 128, 93, 38);
 		add(lblCorreo);
 		
 		JLabel lblNewLabel = new JLabel("Contrase\u00F1a");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel.setBounds(87, 199, 93, 38);
+		lblNewLabel.setBounds(87, 176, 93, 38);
 		add(lblNewLabel);
 		
 		textFieldCORREO = new JTextField();
-		textFieldCORREO.setBounds(231, 153, 208, 38);
+		textFieldCORREO.setBounds(201, 121, 208, 38);
 		add(textFieldCORREO);
 		textFieldCORREO.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(231, 199, 208, 38);
+		passwordField.setBounds(201, 178, 208, 38);
 		add(passwordField);
 		
 		JButton btnEntrar = new JButton("Iniciar Sesion");
 		btnEntrar.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnEntrar.setBounds(231, 271, 208, 38);
+		btnEntrar.setBounds(198, 236, 208, 38);
 		add(btnEntrar);
 		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setForeground(Color.DARK_GRAY);
 		btnVolver.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnVolver.setBounds(10, 322, 93, 38);
+		btnVolver.setBounds(20, 312, 93, 38);
 		add(btnVolver);
 		
 		
@@ -76,7 +76,14 @@ public class LoginGUI extends JPanel {
 		        // Centrar lblIntroducir
 		        int anchoLabel = lblIntroducirDatos.getWidth();
 		        lblIntroducirDatos.setBounds((anchoPanel - anchoLabel) / 2, lblIntroducirDatos.getY(), anchoLabel, lblIntroducirDatos.getHeight());
+		        
+		        //Centrar textFieldCORREO
+		        int anchotextFieldCORREO = textFieldCORREO.getWidth();
+		        textFieldCORREO.setBounds((anchoPanel - anchotextFieldCORREO) / 2, textFieldCORREO.getY(), anchotextFieldCORREO, textFieldCORREO.getHeight());
 
+		        //Centrar passwordField
+		        int anchopasswordField = passwordField.getWidth();
+		        passwordField.setBounds((anchoPanel - anchopasswordField) / 2, passwordField.getY(), anchopasswordField, passwordField.getHeight());
 		    }
 		});		
 
