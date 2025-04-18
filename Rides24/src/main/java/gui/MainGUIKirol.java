@@ -30,11 +30,14 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainGUIKirol extends JFrame {
 
 	private JPanel cardPanel;
 	private CardLayout cardLayout;
+	LoginGUI loginPanel;
 
 	/**
 	 * Launch the application.
@@ -79,8 +82,16 @@ public class MainGUIKirol extends JFrame {
 		panelMENU.add(lblBienvenida);
 		
 		
-		
+		////////////////////////////////////////////////////////////////LOGIN//////////////////////////////////////////////////////
+		loginPanel = new LoginGUI(this);
+		cardPanel.add(loginPanel, "LOGIN");
 		JButton btnLogin = new JButton("Iniciar Sesion");
+		////////////////////////////cambiar panel
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cardLayout.show(cardPanel, "LOGIN");
+			}
+		});
 		//boton login cursor mano
 		btnLogin.addMouseListener(new MouseAdapter() {
 			@Override
@@ -93,6 +104,8 @@ public class MainGUIKirol extends JFrame {
 		panelMENU.add(btnLogin);
 		
 		
+		
+		////////////////////////////////////////////////////////////////REGISTRARSE////////////////////////////////////////////////////////////////
 		JButton btnRegistrarse = new JButton("Registrarse");
 		//boton REGISTRARSE cursor mano
 		btnRegistrarse.addMouseListener(new MouseAdapter() {
