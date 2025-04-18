@@ -193,7 +193,10 @@ public class BLFacadeImplementation  implements BLFacade {
 	
 	@WebMethod 
 	public String pagarFactura(int nfact) throws ErrorPagoException{
-		return "";
+		dbManager.open();
+		String pago = dbManager.pagarFactura(nfact);
+		dbManager.close();
+		return pago;
 	}
     
 

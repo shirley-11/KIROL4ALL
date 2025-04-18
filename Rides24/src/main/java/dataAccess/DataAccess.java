@@ -270,10 +270,10 @@ public void open(){
 	public boolean hacerLogin(String correo, String contrasena) throws SocioNoRegistradoException, IncorrectPasswordException{
 		Socio s = db.find(Socio.class, correo);
 		if(s==null) {
-			throw new SocioNoRegistradoException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.SocioNoRegistrado"));
+			throw new SocioNoRegistradoException("Este correo no es válido, por favor revisa que lo has introducido correctamente o regístrate.");
 		} 
 		else if(!s.getContrasena().equals(contrasena)){
-			throw new IncorrectPasswordException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.IncorrectPassword"));
+			throw new IncorrectPasswordException("Contraseña incorrecta, inténtalo de nuevo.");
 		}
 		else return (true);
 	}
@@ -281,7 +281,7 @@ public void open(){
 	public Socio registrarse(String nombre, String correo, String contrasena) throws SocioRegistradoException {
 		Socio s = db.find(Socio.class, correo);
 		if(s!=null) {
-			throw new SocioRegistradoException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.SocioRegistrado"));
+			throw new SocioRegistradoException("Este correo está en uso, no puedes registrarte de nuevo.");
 		} 
 		else {
 			s = new Socio(nombre, correo, contrasena);
@@ -434,6 +434,7 @@ public void open(){
 	
 	
 	public List<Factura> getFacturas (Socio socio){
+		System.out.println(">> DataAccess: getFacturas");
 		List<Factura> res = new ArrayList<>();
 		TypedQuery<Factura> queryFactura = db.createQuery("SELECT f FROM Factura f WHERE f.socioFac=?1 AND f.estado=?2 ORDER BY f.fechaFac, f.idFactura",Factura.class);   
 		queryFactura.setParameter(1, socio);
@@ -460,7 +461,7 @@ public void open(){
 			return f.getSocioFac().getNombre() + " has pagado la factura: " + nfact;
 		}
 		else {
-			throw new ErrorPagoException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.PagarFactura"));
+			throw new ErrorPagoException("No se puedo realizar el pago. Inténtalo de nuevo");
 		}
 		
 		
