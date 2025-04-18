@@ -1,0 +1,46 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-18 20:19:01 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 21032@LAPTOP-9IP7ANLF
+
+[2025-04-18 20:19:01 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-18 20:19:01 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-18 20:19:01 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-18 20:19:01 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-18 20:19:01 #6 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-18 20:19:01 #7 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-18 20:21:53 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 1504@LAPTOP-9IP7ANLF
+
+[2025-04-18 20:21:54 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-18 20:21:54 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-18 20:21:54 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-18 20:21:54 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-18 20:21:54 #6 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-18 20:21:54 #7 type.registry] 
+New type java.util.Vector<domain.Ride>
+
