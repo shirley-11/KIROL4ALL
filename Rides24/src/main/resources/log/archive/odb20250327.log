@@ -1,0 +1,69 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-03-27 14:11:52 #1 store] 
+Database 'C:\Users\Shirley\OneDrive\UPV\4 curso\IS1\GLOBAL\aplicación-polid\versión1\Rides24-master\src\main\resources\rides.temp' is opened by 8240@LAPTOP-9IP7ANLF
+
+[2025-03-27 14:11:52 #2 type.registry] 
+New type domain.Driver
+
+[2025-03-27 14:11:52 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-03-27 14:11:52 #4 type.registry] 
+New type domain.Ride
+
+[2025-03-27 14:11:52 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-03-27 14:11:52 #6 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-03-27 14:11:52 #7 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-03-27 14:13:10 #1 store] 
+Database 'C:\Users\Shirley\OneDrive\UPV\4 curso\IS1\GLOBAL\aplicación-polid\versión1\Rides24-master\src\main\resources\rides.temp' is opened by 18640@LAPTOP-9IP7ANLF
+
+[2025-03-27 14:13:10 #2 type.registry] 
+New type domain.Driver
+
+[2025-03-27 14:13:10 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-03-27 14:13:10 #4 type.registry] 
+New type domain.Ride
+
+[2025-03-27 14:13:10 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-03-27 14:13:10 #6 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-03-27 14:13:10 #7 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-03-27 16:07:31 #1 store] 
+Database 'C:\Users\Shirley\OneDrive\UPV\4 curso\IS1\GLOBAL\aplicación-polid\versión1\Rides24-master\src\main\resources\rides.temp' is opened by 11548@LAPTOP-9IP7ANLF
+
+[2025-03-27 16:07:31 #2 type.registry] 
+New type domain.Driver
+
+[2025-03-27 16:07:31 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-03-27 16:07:31 #4 type.registry] 
+New type domain.Ride
+
+[2025-03-27 16:07:31 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-03-27 16:07:31 #6 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-03-27 16:07:31 #7 type.registry] 
+New type java.util.Vector<domain.Ride>
+

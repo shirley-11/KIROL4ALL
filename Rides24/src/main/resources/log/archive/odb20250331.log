@@ -1,0 +1,23 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-03-31 23:22:59 #1 store] 
+Database 'C:\Users\Shirley\OneDrive\UPV\4 curso\IS1\GLOBAL\aplicación-polid\versión1\Rides24-master\src\main\resources\rides.temp' is opened by 8200@LAPTOP-9IP7ANLF
+
+[2025-03-31 23:22:59 #2 type.registry] 
+New type domain.Driver
+
+[2025-03-31 23:22:59 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-03-31 23:22:59 #4 type.registry] 
+New type domain.Ride
+
+[2025-03-31 23:22:59 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-03-31 23:22:59 #6 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-03-31 23:22:59 #7 type.registry] 
+New type java.util.Vector<domain.Ride>
+
