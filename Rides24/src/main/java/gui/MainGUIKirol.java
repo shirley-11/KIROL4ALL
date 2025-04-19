@@ -34,11 +34,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class MainGUIKirol extends JFrame {
-
+	private static final long serialVersionUID = 1L;
 	private JPanel cardPanel;
 	private CardLayout cardLayout;
 	LoginGUI loginPanel;
 	RegistrarseGUI registrarsePanel;
+	ConsultarGUI consultarPanel;
 
 	/**
 	 * Launch the application.
@@ -126,7 +127,15 @@ public class MainGUIKirol extends JFrame {
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panelMENU.add(btnRegistrarse);
 		
+		////////////////////////////////////////////////////////////////CONSULTAR SES////////////////////////////////////////////////////////////////
+		consultarPanel = new ConsultarGUI(this);
+		cardPanel.add(consultarPanel, "CONSULTAR");
 		JButton btnConsultSesiones = new JButton("Consultar sesiones");
+		btnConsultSesiones.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cardLayout.show(cardPanel, "CONSULTAR");
+			}
+		});
 		////boton SESIONES cursor mano
 		btnConsultSesiones.addMouseListener(new MouseAdapter() {
 			@Override

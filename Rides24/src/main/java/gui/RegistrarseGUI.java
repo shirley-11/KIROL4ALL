@@ -18,6 +18,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class RegistrarseGUI extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private JTextField textFieldNombre;
 	private JTextField textFieldCorreo;
 	private JPasswordField passwordField;
@@ -55,35 +56,33 @@ public class RegistrarseGUI extends JPanel {
 		lblcontraseña.setBounds(99, 188, 81, 31);
 		add(lblcontraseña);
 		
-		lblAVISARFALLO = new JLabel("");
+		lblAVISARFALLO = new JLabel("");//////////////////PARA PONER EXCEPCIONES
 		lblAVISARFALLO.setForeground(new Color(165, 42, 42));
 		lblAVISARFALLO.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblAVISARFALLO.setBounds(142, 304, 316, 38);
 		add(lblAVISARFALLO);
 		
 		textFieldNombre = new JTextField();
-		textFieldNombre.setHorizontalAlignment(SwingConstants.CENTER);
 		textFieldNombre.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		textFieldNombre.setForeground(new Color(0, 0, 0));
 		textFieldNombre.setBounds(189, 106, 204, 31);
 		add(textFieldNombre);
 		textFieldNombre.setColumns(10);
 		
-		textFieldCorreo = new JTextField();
+		textFieldCorreo = new JTextField();///////////////////////////TEXTFIELDCORREO/////////////////////////////
 		textFieldCorreo.setForeground(new Color(0, 0, 0));
-		textFieldCorreo.setHorizontalAlignment(SwingConstants.CENTER);
 		textFieldCorreo.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		textFieldCorreo.setBounds(189, 147, 204, 31);
 		add(textFieldCorreo);
 		textFieldCorreo.setColumns(10);
 		
-		passwordField = new JPasswordField();
+		passwordField = new JPasswordField();///////////////////////////TEXTFIELDCONTRASEÑA/////////////////////////////
 		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		passwordField.setToolTipText("Introduce tu contrase\u00F1a aqu\u00ED");
 		passwordField.setBounds(189, 188, 204, 31);
 		add(passwordField);
 		
-		btnRegistarse = new JButton("Registrarse");
+		btnRegistarse = new JButton("Registrarse");/////////////////////////////////////////////TBTNREGISTRARSE///////////////////////////////////////////
 		btnRegistarse.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -94,7 +93,7 @@ public class RegistrarseGUI extends JPanel {
 		btnRegistarse.setBounds(189, 240, 208, 38);
 		add(btnRegistarse);
 		
-		btnVolver = new JButton("Volver");
+		btnVolver = new JButton("Volver");///////////////////////////////////////TBTNVOLVER//////////////////////////////////////////////////////////////
 		btnVolver.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
