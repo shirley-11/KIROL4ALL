@@ -2,6 +2,8 @@ package gui;
 
 import javax.swing.JPanel;
 import java.awt.Color;
+import java.awt.Cursor;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
@@ -11,10 +13,16 @@ import java.awt.event.ComponentEvent;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class LoginGUI extends JPanel {
 	private JTextField textFieldCORREO;
 	private JPasswordField passwordField;
+	private JButton btnEntrar;
+	private JButton btnVolver;
 
 	/**
 	 * Create the panel.
@@ -51,12 +59,29 @@ public class LoginGUI extends JPanel {
 		passwordField.setBounds(201, 178, 208, 38);
 		add(passwordField);
 		
-		JButton btnEntrar = new JButton("Iniciar Sesion");
+		btnEntrar = new JButton("Iniciar Sesion");///////////////////////////////////////////////////////////////////////////////////ENTRAR
+		btnEntrar.addMouseListener(new MouseAdapter() { //////////////////////CURSOR MANO
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnEntrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			}
+		});
 		btnEntrar.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnEntrar.setBounds(198, 236, 208, 38);
 		add(btnEntrar);
 		
-		JButton btnVolver = new JButton("Volver");
+		btnVolver = new JButton("Volver"); ///////////////////////////////////////////////////////////////////////////////////VOLVER
+		btnVolver.addMouseListener(new MouseAdapter() {//////////////////////CURSOR MANO
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			}
+		});
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				mainGUIKirol.volverAMenuPrincipal();
+			}
+		});
 		btnVolver.setForeground(Color.DARK_GRAY);
 		btnVolver.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnVolver.setBounds(20, 312, 93, 38);
@@ -84,8 +109,15 @@ public class LoginGUI extends JPanel {
 		        //Centrar passwordField
 		        int anchopasswordField = passwordField.getWidth();
 		        passwordField.setBounds((anchoPanel - anchopasswordField) / 2, passwordField.getY(), anchopasswordField, passwordField.getHeight());
+		        
 		    }
 		});		
 
+	}
+	
+	public void limpiarCampos() {
+		textFieldCORREO.setText("");
+		passwordField.setText("");
+		
 	}
 }

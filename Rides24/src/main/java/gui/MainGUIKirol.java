@@ -160,4 +160,10 @@ public class MainGUIKirol extends JFrame {
 		cardLayout.show(cardPanel, "MENU");
 
 	}
+	public void volverAMenuPrincipal() {
+		loginPanel.limpiarCampos();
+		cardLayout.show(cardPanel, "MENU");
+		setTitle("");
+	}
+	
 }
