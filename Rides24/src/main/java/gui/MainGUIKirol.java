@@ -38,6 +38,7 @@ public class MainGUIKirol extends JFrame {
 	private JPanel cardPanel;
 	private CardLayout cardLayout;
 	LoginGUI loginPanel;
+	RegistrarseGUI registrarsePanel;
 
 	/**
 	 * Launch the application.
@@ -74,9 +75,9 @@ public class MainGUIKirol extends JFrame {
 		cardPanel.add(panelMENU, "MENU");
 		panelMENU.setLayout(null);
 		
-		JLabel lblBienvenida = new JLabel("Bienvenido, Que desea hacer?");
+		JLabel lblBienvenida = new JLabel("Bienvenido, \u00BFQu\u00E9 desea hacer?");
 		lblBienvenida.setBackground(UIManager.getColor("Button.background"));
-		lblBienvenida.setBounds(197, 63, 212, 50);
+		lblBienvenida.setBounds(182, 63, 229, 50);
 		lblBienvenida.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblBienvenida.setHorizontalAlignment(SwingConstants.CENTER);
 		panelMENU.add(lblBienvenida);
@@ -106,7 +107,14 @@ public class MainGUIKirol extends JFrame {
 		
 		
 		////////////////////////////////////////////////////////////////REGISTRARSE////////////////////////////////////////////////////////////////
+		registrarsePanel = new RegistrarseGUI(this);
+		cardPanel.add(registrarsePanel, "REGISTRARSE");
 		JButton btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse.addActionListener(new ActionListener() {///////CAMBIAR PANEL
+			public void actionPerformed(ActionEvent e) {
+				cardLayout.show(cardPanel, "REGISTRARSE");
+			}
+		});
 		//boton REGISTRARSE cursor mano
 		btnRegistrarse.addMouseListener(new MouseAdapter() {
 			@Override
@@ -162,6 +170,7 @@ public class MainGUIKirol extends JFrame {
 	}
 	public void volverAMenuPrincipal() {
 		loginPanel.limpiarCampos();
+		registrarsePanel.limpiarCampos();
 		cardLayout.show(cardPanel, "MENU");
 		setTitle("");
 	}

@@ -23,6 +23,7 @@ public class LoginGUI extends JPanel {
 	private JPasswordField passwordField;
 	private JButton btnEntrar;
 	private JButton btnVolver;
+	private JLabel lblAVISARFALLO;
 
 	/**
 	 * Create the panel.
@@ -44,11 +45,19 @@ public class LoginGUI extends JPanel {
 		lblCorreo.setBounds(87, 128, 93, 38);
 		add(lblCorreo);
 		
-		JLabel lblNewLabel = new JLabel("Contrase\u00F1a");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel.setBounds(87, 176, 93, 38);
-		add(lblNewLabel);
+		JLabel lblCONTRASEÑA = new JLabel("Contrase\u00F1a");
+		lblCONTRASEÑA.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCONTRASEÑA.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblCONTRASEÑA.setBounds(87, 176, 93, 38);
+		add(lblCONTRASEÑA);
+		
+		lblAVISARFALLO = new JLabel("");
+		lblAVISARFALLO.setForeground(new Color(165, 42, 42));
+		lblAVISARFALLO.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblAVISARFALLO.setBounds(143, 312, 373, 38);
+		add(lblAVISARFALLO);
+		
+		
 		
 		textFieldCORREO = new JTextField();
 		textFieldCORREO.setBounds(201, 121, 208, 38);
@@ -59,7 +68,7 @@ public class LoginGUI extends JPanel {
 		passwordField.setBounds(201, 178, 208, 38);
 		add(passwordField);
 		
-		btnEntrar = new JButton("Iniciar Sesion");///////////////////////////////////////////////////////////////////////////////////ENTRAR
+		btnEntrar = new JButton("Iniciar Sesion");///////////////////////////////////////////////////////////////////////////////////BTNENTRAR
 		btnEntrar.addMouseListener(new MouseAdapter() { //////////////////////CURSOR MANO
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -70,22 +79,24 @@ public class LoginGUI extends JPanel {
 		btnEntrar.setBounds(198, 236, 208, 38);
 		add(btnEntrar);
 		
-		btnVolver = new JButton("Volver"); ///////////////////////////////////////////////////////////////////////////////////VOLVER
+		btnVolver = new JButton("Volver"); ///////////////////////////////////////////////////////////////////////////////////BTNVOLVER
 		btnVolver.addMouseListener(new MouseAdapter() {//////////////////////CURSOR MANO
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			}
 		});
-		btnVolver.addActionListener(new ActionListener() {
+		btnVolver.addActionListener(new ActionListener() {//////////////////MENU
 			public void actionPerformed(ActionEvent e) {
 				mainGUIKirol.volverAMenuPrincipal();
 			}
 		});
-		btnVolver.setForeground(Color.DARK_GRAY);
+		btnVolver.setForeground(Color.GRAY);
 		btnVolver.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnVolver.setBounds(20, 312, 93, 38);
 		add(btnVolver);
+		
+		
 		
 		
 		/////////////////////////////////////////////COMPONENTES SE QUEDEN E N LA MITAD DE X////////////////////////////////////////////////
