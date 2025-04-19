@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import businessLogic.BLFacade;
+
 import java.awt.CardLayout;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -35,15 +38,25 @@ import java.awt.event.ActionEvent;
 
 public class MainGUIKirol extends JFrame {
 	private static final long serialVersionUID = 1L;
+	private static BLFacade appFacadeInterface;
+	
+	public static BLFacade getBusinessLogic(){
+		return appFacadeInterface;
+	}
+	 
+	public static void setBussinessLogic (BLFacade afi){
+		appFacadeInterface=afi;
+	}
 	private JPanel cardPanel;
 	private CardLayout cardLayout;
 	LoginGUI loginPanel;
 	RegistrarseGUI registrarsePanel;
 	ConsultarGUI consultarPanel;
+	protected JLabel jLabelSelectOption;
 
 	/**
 	 * Launch the application.
-	 */
+	 *
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -56,11 +69,14 @@ public class MainGUIKirol extends JFrame {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the frame.
 	 */
 	public MainGUIKirol() {
+		super();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 658, 426);
 		cardLayout = new CardLayout();
@@ -146,6 +162,11 @@ public class MainGUIKirol extends JFrame {
 		btnConsultSesiones.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnConsultSesiones.setBounds(166, 219, 260, 38);
 		panelMENU.add(btnConsultSesiones);
+		
+		jLabelSelectOption = new JLabel("");
+		jLabelSelectOption.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		jLabelSelectOption.setBounds(166, 315, 260, 24);
+		panelMENU.add(jLabelSelectOption);
 		
 		/////////////////////////////////////////////COMPONENTES SE QUEDEN E N LA MITAD DE X////////////////////////////////////////////////
 		panelMENU.addComponentListener(new ComponentAdapter() {

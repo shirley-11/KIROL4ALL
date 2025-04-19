@@ -28,12 +28,13 @@ public class ApplicationLauncher {
 		
 		System.out.println("Locale: "+Locale.getDefault());
 		
-	    Driver driver=new Driver("driver3@gmail.com","Test Driver");
+	    //Driver driver=new Driver("driver3@gmail.com","Test Driver");
 
 		
-		MainGUI a=new MainGUI(driver);
-		a.setVisible(true);
-
+		//MainGUI a=new MainGUI(driver);
+		//a.setVisible(true);
+	    MainGUIKirol a = new MainGUIKirol();
+	    a.setVisible(true);
 
 		try {
 			
@@ -64,12 +65,12 @@ public class ApplicationLauncher {
 		         appFacadeInterface = service.getPort(BLFacade.class);
 			} 
 			
-			MainGUI.setBussinessLogic(appFacadeInterface);
+			MainGUIKirol.setBussinessLogic(appFacadeInterface);
 
 		
 
 			
-		}catch (Exception e) {
+		}catch (Exception e) {			
 			a.jLabelSelectOption.setText("Error: "+e.toString());
 			a.jLabelSelectOption.setForeground(Color.RED);	
 			
