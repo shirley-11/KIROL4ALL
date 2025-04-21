@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import businessLogic.BLFacade;
+import domain.Socio;
 
 import java.awt.CardLayout;
 import java.awt.BorderLayout;
@@ -203,6 +204,12 @@ public class MainGUIKirol extends JFrame {
 		registrarsePanel.limpiarCampos();
 		cardLayout.show(cardPanel, "MENU");
 		setTitle("");
+	}
+	
+	public void enseñarSocioMenu(SocioMenuGUI socioMenuPanel, Socio s) {
+		cardPanel.add(socioMenuPanel, "SOCIOMENU");
+		cardLayout.show(cardPanel, "SOCIOMENU");
+		setTitle(s.getNombre());
 	}
 	
 }

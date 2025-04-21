@@ -127,9 +127,9 @@ public class BLFacadeImplementation  implements BLFacade {
 	}
     /////////////////////////////////////////////USUARIO////////
     @WebMethod
-    public boolean hacerLogin(String correo, String contrasena) throws SocioNoRegistradoException, IncorrectPasswordException {
+    public Socio hacerLogin(String correo, String contrasena) throws SocioNoRegistradoException, IncorrectPasswordException {
     	dbManager.open();
-    	boolean login = dbManager.hacerLogin(correo, contrasena);
+    	Socio login = dbManager.hacerLogin(correo, contrasena);
     	dbManager.close();
     	return login;
     }

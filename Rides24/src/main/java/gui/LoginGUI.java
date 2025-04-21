@@ -6,6 +6,12 @@ import java.awt.Cursor;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import businessLogic.BLFacade;
+import domain.Socio;
+import exceptions.IncorrectPasswordException;
+import exceptions.SocioNoRegistradoException;
+
 import java.awt.Font;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -17,6 +23,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JTextArea;
 
 public class LoginGUI extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -24,7 +31,7 @@ public class LoginGUI extends JPanel {
 	private JPasswordField passwordField;
 	private JButton btnEntrar;
 	private JButton btnVolver;
-	private JLabel lblAVISARFALLO;
+	private JTextArea textAreaAviso;
 
 	/**
 	 * Create the panel.
@@ -52,12 +59,19 @@ public class LoginGUI extends JPanel {
 		lblCONTRASEÑA.setBounds(87, 176, 93, 38);
 		add(lblCONTRASEÑA);
 		
-		lblAVISARFALLO = new JLabel("");
-		lblAVISARFALLO.setForeground(new Color(165, 42, 42));
-		lblAVISARFALLO.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblAVISARFALLO.setBounds(143, 312, 373, 38);
-		add(lblAVISARFALLO);
+		textAreaAviso = new JTextArea();
+		textAreaAviso.setForeground(new Color(165, 42, 42));
+		textAreaAviso.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		textAreaAviso.setBounds(145, 295, 316, 58);
+		add(textAreaAviso);
+		//Configuraciones para hacerlo invisible
+		textAreaAviso.setEditable(false); // para que el usuario no pueda escribir
+		textAreaAviso.setLineWrap(true); // que corte las líneas automáticamente
+		textAreaAviso.setWrapStyleWord(true); // que no corte palabras a la mitad
+		textAreaAviso.setOpaque(false); // sin fondo
+		textAreaAviso.setBorder(null); // sin borde
 		
+
 		
 		
 		textFieldCORREO = new JTextField();
@@ -70,6 +84,24 @@ public class LoginGUI extends JPanel {
 		add(passwordField);
 		
 		btnEntrar = new JButton("Iniciar Sesion");///////////////////////////////////////////////////////////////////////////////////BTNENTRAR
+		btnEntrar.addActionListener(new ActionListener() {///////PULSAR
+			public void actionPerformed(ActionEvent e) {
+				try {
+					BLFacade bl = MainGUIKirol.getBusinessLogic();
+					Socio s = bl.hacerLogin(textFieldCORREO.getText(), new String(passwordField.getPassword()));
+					
+					SocioMenuGUI socioMenuPanel = new SocioMenuGUI(mainGUIKirol, s);
+					mainGUIKirol.enseñarSocioMenu(socioMenuPanel, s);		
+				}catch (SocioNoRegistradoException eNoregistrado) {
+					textAreaAviso.setVisible(true); // visible sólo cuando hay error
+					textAreaAviso.setText(eNoregistrado.getMessage());
+				}catch (IncorrectPasswordException eIncorrecto) {
+					textAreaAviso.setVisible(true); // visible sólo cuando hay error
+					textAreaAviso.setText(eIncorrecto.getMessage());
+				}
+				
+			}
+		});
 		btnEntrar.addMouseListener(new MouseAdapter() { //////////////////////CURSOR MANO
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -100,6 +132,8 @@ public class LoginGUI extends JPanel {
 		
 		
 		
+		
+		
 		/////////////////////////////////////////////COMPONENTES SE QUEDEN E N LA MITAD DE X////////////////////////////////////////////////
 		addComponentListener(new ComponentAdapter() {
 		    @Override
@@ -113,6 +147,10 @@ public class LoginGUI extends JPanel {
 		        // Centrar lblIntroducir
 		        int anchoLabel = lblIntroducirDatos.getWidth();
 		        lblIntroducirDatos.setBounds((anchoPanel - anchoLabel) / 2, lblIntroducirDatos.getY(), anchoLabel, lblIntroducirDatos.getHeight());
+		        
+		        // Centrar lblIntroducir
+		        int anchotextAreaAviso = textAreaAviso.getWidth();
+		        textAreaAviso.setBounds((anchoPanel - anchotextAreaAviso) / 2, textAreaAviso.getY(), anchotextAreaAviso, textAreaAviso.getHeight());
 		        
 		        //Centrar textFieldCORREO
 		        int anchotextFieldCORREO = textFieldCORREO.getWidth();
@@ -130,6 +168,7 @@ public class LoginGUI extends JPanel {
 	public void limpiarCampos() {
 		textFieldCORREO.setText("");
 		passwordField.setText("");
+		textAreaAviso.setText("");
 		
 	}
 }

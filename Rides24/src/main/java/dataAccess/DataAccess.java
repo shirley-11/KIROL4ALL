@@ -22,10 +22,12 @@ import javax.persistence.TypedQuery;
 import configuration.ConfigXML;
 import configuration.UtilDate;
 import domain.API_Banco;
+import domain.Actividad;
 import domain.Driver;
 import domain.Factura;
 import domain.Reserva;
 import domain.Ride;
+import domain.Sala;
 import domain.Sesion;
 import domain.Socio;
 import exceptions.RideAlreadyExistException;
@@ -110,11 +112,45 @@ public class DataAccess  {
 
 			driver3.addRide("Bilbo", "Donostia", UtilDate.newDate(year,month,14), 1, 3);
 
-			
-						
 			db.persist(driver1);
 			db.persist(driver2);
 			db.persist(driver3);
+			
+			///////////////////////////////////////////////////////////////////////////////PROYCTO GLOBAL////////////
+			//Crear socios			
+			Socio socio1 = new Socio ("Aitor Fernández", "socio1@gmail.com", "socio1");
+			
+			//Crear Salas
+			Sala sala1Max = new Sala("Sala Máxima", 13);
+			Sala sala2Grande = new Sala("Sala Grande", 12);
+			Sala sala3Intermedia = new Sala("Sala Intermedia", 10);
+			Sala sala4Media = new Sala("Sala Media", 7);
+			Sala sala5Compacta = new Sala("Sala Compacta", 5);
+			
+			//Crear Actividades
+			Actividad act1Pilates = new Actividad("Pilates", 3, 9);
+			Actividad act2Yoga = new Actividad("Yoga", 2, 7);
+			Actividad act3Zumba = new Actividad("Zumba", 2, 7);
+			Actividad act4Spinning = new Actividad("Spinning", 4, 11);
+			Actividad act5Boxeo = new Actividad("Boxeo", 5, 13);
+			Actividad act6CrossFit= new Actividad("CrossFit", 5, 13);
+			Actividad act7GimnasiaMayores= new Actividad("Gimnasia para Mayores", 1, 5);
+			Actividad act8CiclismoIndoor= new Actividad("Ciclismo Indoor", 3, 9);
+			
+			db.persist(socio1);
+			db.persist(sala1Max);
+			db.persist(sala2Grande);
+			db.persist(sala3Intermedia);
+			db.persist(sala4Media);
+			db.persist(sala5Compacta);
+			db.persist(act1Pilates);
+			db.persist(act2Yoga);
+			db.persist(act3Zumba);			
+			db.persist(act4Spinning);
+			db.persist(act5Boxeo);
+			db.persist(act6CrossFit);
+			db.persist(act7GimnasiaMayores);
+			db.persist(act8CiclismoIndoor);	
 
 	
 			db.getTransaction().commit();
@@ -265,9 +301,9 @@ public void open(){
 		System.out.println("DataAcess closed");
 	}
 	
-	//////////////////////////////////7USUARIO7//////////////////////////////////////////////
+	//////////////////////////////////7USUARIO7////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public boolean hacerLogin(String correo, String contrasena) throws SocioNoRegistradoException, IncorrectPasswordException{
+	public Socio hacerLogin(String correo, String contrasena) throws SocioNoRegistradoException, IncorrectPasswordException{
 		Socio s = db.find(Socio.class, correo);
 		if(s==null) {
 			throw new SocioNoRegistradoException("Este correo no es válido, por favor revisa que lo has introducido correctamente o regístrate.");
@@ -275,7 +311,7 @@ public void open(){
 		else if(!s.getContrasena().equals(contrasena)){
 			throw new IncorrectPasswordException("Contraseña incorrecta, inténtalo de nuevo.");
 		}
-		else return (true);
+		else return s;
 	}
 	
 	public Socio registrarse(String nombre, String correo, String contrasena) throws SocioRegistradoException {

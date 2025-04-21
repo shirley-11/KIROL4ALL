@@ -88,7 +88,7 @@ public interface BLFacade  {
 	 * @param correo del socio
 	 * @param contrasena
 	 */
-	@WebMethod public boolean hacerLogin(String correo, String contrasena) throws SocioNoRegistradoException, IncorrectPasswordException;
+	@WebMethod public Socio hacerLogin(String correo, String contrasena) throws SocioNoRegistradoException, IncorrectPasswordException;
 	
 	/**
 	 * Metodo que añade un nuevo socio a la base de datos si el socio no existe
