@@ -90,8 +90,8 @@ public class LoginGUI extends JPanel {
 					BLFacade bl = MainGUIKirol.getBusinessLogic();
 					Socio s = bl.hacerLogin(textFieldCORREO.getText(), new String(passwordField.getPassword()));
 					
-					SocioMenuGUI socioMenuPanel = new SocioMenuGUI(mainGUIKirol, s);
-					mainGUIKirol.enseñarSocioMenu(socioMenuPanel, s);		
+					
+					mainGUIKirol.enseñarSocioMenu(s);		
 				}catch (SocioNoRegistradoException eNoregistrado) {
 					textAreaAviso.setVisible(true); // visible sólo cuando hay error
 					textAreaAviso.setText(eNoregistrado.getMessage());

@@ -206,7 +206,8 @@ public class MainGUIKirol extends JFrame {
 		setTitle("");
 	}
 	
-	public void enseñarSocioMenu(SocioMenuGUI socioMenuPanel, Socio s) {
+	public void enseñarSocioMenu(Socio s) {
+		SocioMenuGUI socioMenuPanel = new SocioMenuGUI(this, s);
 		cardPanel.add(socioMenuPanel, "SOCIOMENU");
 		cardLayout.show(cardPanel, "SOCIOMENU");
 		setTitle(s.getNombre());

@@ -3,6 +3,11 @@ package gui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import businessLogic.BLFacade;
+import domain.Socio;
+import exceptions.SocioRegistradoException;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import java.awt.Color;
@@ -59,7 +64,7 @@ public class RegistrarseGUI extends JPanel {
 		lblAVISARFALLO = new JLabel("");//////////////////PARA PONER EXCEPCIONES
 		lblAVISARFALLO.setForeground(new Color(165, 42, 42));
 		lblAVISARFALLO.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblAVISARFALLO.setBounds(142, 304, 316, 38);
+		lblAVISARFALLO.setBounds(142, 304, 380, 38);
 		add(lblAVISARFALLO);
 		
 		textFieldNombre = new JTextField();
@@ -83,7 +88,19 @@ public class RegistrarseGUI extends JPanel {
 		add(passwordField);
 		
 		btnRegistarse = new JButton("Registrarse");/////////////////////////////////////////////TBTNREGISTRARSE///////////////////////////////////////////
-		btnRegistarse.addMouseListener(new MouseAdapter() {
+		btnRegistarse.addActionListener(new ActionListener() {////para REGISTRARSE
+			public void actionPerformed(ActionEvent e) {
+				try {
+					BLFacade bl = MainGUIKirol.getBusinessLogic();
+					Socio s = bl.registrarse(textFieldNombre.getText(), textFieldCorreo.getText(), new String(passwordField.getPassword()));
+					
+					mainGUIKirol.enseñarSocioMenu(s);
+				} catch (SocioRegistradoException eRegistrado) {
+					lblAVISARFALLO.setText(eRegistrado.getMessage());
+				}
+			}
+		});
+		btnRegistarse.addMouseListener(new MouseAdapter() {/////CURSOR MANO
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				btnRegistarse.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -145,6 +162,7 @@ public class RegistrarseGUI extends JPanel {
 		textFieldNombre.setText("");
 		textFieldCorreo.setText("");
 		passwordField.setText("");
+		lblAVISARFALLO.setText("");
 		
 	}
 }
