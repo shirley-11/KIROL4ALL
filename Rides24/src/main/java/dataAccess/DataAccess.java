@@ -74,7 +74,17 @@ public class DataAccess  {
     	this.db=db;
     }
 
-	
+    public java.sql.Date convertirStringADate(String fechaStr) { ////PARA PONER FECHAS EN FORMATO SQL
+        try {
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            java.util.Date fechaUtil = formato.parse(fechaStr);
+            return new java.sql.Date(fechaUtil.getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null; // O podrías lanzar una excepción personalizada si quieres
+        }
+    }
+
 	
 	/**
 	 * This is the data access method that initializes the database with some events and questions.
@@ -121,8 +131,8 @@ public class DataAccess  {
 			Socio socio1 = new Socio ("Aitor Fernández", "socio1@gmail.com", "socio1");
 			
 			//Crear Salas
-			Sala sala1Max = new Sala("Sala Máxima", 13);
-			Sala sala2Grande = new Sala("Sala Grande", 12);
+			Sala sala1Max = new Sala("Sala Máxima", 12);
+			Sala sala2Grande = new Sala("Sala Grande", 11);
 			Sala sala3Intermedia = new Sala("Sala Intermedia", 10);
 			Sala sala4Media = new Sala("Sala Media", 7);
 			Sala sala5Compacta = new Sala("Sala Compacta", 5);
@@ -137,13 +147,45 @@ public class DataAccess  {
 			Actividad act7GimnasiaMayores= new Actividad("Gimnasia para Mayores", 1, 5);
 			Actividad act8CiclismoIndoor= new Actividad("Ciclismo Indoor", 3, 9);
 			
-			db.persist(socio1);
-			db.persist(sala1Max);
+			//Crear Sesiones
+	        java.sql.Date fechaLUNES = this.convertirStringADate("07/04/2025");//LUNES	        
+			//Sesion s1LUNES = new Sesion (act2Yoga, sala1Max, fechaLUNES, "09:00");
+			Sesion s2LUNES = new Sesion (act1Pilates, sala2Grande, fechaLUNES, "10:30");
+			Sesion s3LUNES = new Sesion (act3Zumba, sala3Intermedia, fechaLUNES, "11:30");
+			Sesion s4LUNES = new Sesion (act4Spinning, sala4Media, fechaLUNES, "15:00");
+			//Sesion s5LUNES = new Sesion (act6CrossFit, sala5Compacta, fechaLUNES, "16:30");						
+			java.sql.Date fechaMARTES = this.convertirStringADate("08/04/2025");//MARTES	        
+			//Sesion s1MARTES = new Sesion (act1Pilates, sala3Intermedia, fechaMARTES, "09:00");
+			Sesion s2MARTES = new Sesion (act2Yoga, sala2Grande, fechaMARTES, "10:00");
+			Sesion s3MARTES = new Sesion (act6CrossFit, sala4Media, fechaMARTES, "11:30");
+			Sesion s4MARTES = new Sesion (act4Spinning, sala5Compacta, fechaMARTES, "15:00");
+			//Sesion s5MARTES = new Sesion (act5Boxeo, sala1Max, fechaMARTES, "16:00");
+			java.sql.Date fechaMIERCOLES = this.convertirStringADate("09/04/2025");//MIERCOLES
+			Sesion s1MIERCOLES = new Sesion (act5Boxeo, sala1Max, fechaMIERCOLES, "09:00");
+			Sesion s2MIERCOLES = new Sesion (act7GimnasiaMayores, sala4Media, fechaMIERCOLES, "18:00");
+			java.sql.Date fechaJUEVES = this.convertirStringADate("10/04/2025");//JUEVES
+			Sesion s1JUEVES = new Sesion (act3Zumba, sala3Intermedia, fechaJUEVES, "11:00");
+			Sesion s2JUEVES = new Sesion (act8CiclismoIndoor, sala2Grande, fechaJUEVES, "17:30");
+			java.sql.Date fechaVIERNES = this.convertirStringADate("11/04/2025");//VIERNES
+			Sesion s1VIERNES = new Sesion (act8CiclismoIndoor, sala1Max, fechaVIERNES, "18:30");
+			Sesion s2VIERNES = new Sesion (act5Boxeo, sala5Compacta, fechaVIERNES, "17:30");
+			java.sql.Date fechaSABADO = this.convertirStringADate("12/04/2025");//SABADO
+			Sesion s1SABADO = new Sesion (act7GimnasiaMayores, sala4Media, fechaSABADO, "09:00");
+			Sesion s2SABADO = new Sesion (act6CrossFit, sala3Intermedia, fechaSABADO, "11:00");
+			Sesion s3SABADO = new Sesion (act3Zumba, sala2Grande, fechaSABADO, "12:00");
+			java.sql.Date fechaDOMINGO = this.convertirStringADate("13/04/2025");//DOMINGO
+			Sesion s1DOMINGO = new Sesion (act1Pilates, sala5Compacta, fechaDOMINGO, "09:00");
+			Sesion s2DOMINGO = new Sesion (act2Yoga, sala5Compacta, fechaDOMINGO, "10:00");
+			Sesion s3DOMINGO = new Sesion (act8CiclismoIndoor, sala1Max, fechaDOMINGO, "10:00");
+			
+			
+			db.persist(socio1);/////SOCIOS
+			db.persist(sala1Max);////SALAS
 			db.persist(sala2Grande);
 			db.persist(sala3Intermedia);
 			db.persist(sala4Media);
 			db.persist(sala5Compacta);
-			db.persist(act1Pilates);
+			db.persist(act1Pilates);///ACTIVIDADES
 			db.persist(act2Yoga);
 			db.persist(act3Zumba);			
 			db.persist(act4Spinning);
@@ -151,6 +193,29 @@ public class DataAccess  {
 			db.persist(act6CrossFit);
 			db.persist(act7GimnasiaMayores);
 			db.persist(act8CiclismoIndoor);	
+			//db.persist(s1LUNES);////SESIONES 18 en total
+			db.persist(s2LUNES);
+			db.persist(s3LUNES);
+			db.persist(s4LUNES);
+			//db.persist(s5LUNES);
+			//db.persist(s1MARTES);
+			db.persist(s2MARTES);
+			db.persist(s3MARTES);
+			db.persist(s4MARTES);
+			//db.persist(s5MARTES);
+			db.persist(s1MIERCOLES);
+			db.persist(s2MIERCOLES);
+			db.persist(s1JUEVES);
+			db.persist(s2JUEVES);
+			db.persist(s1VIERNES);
+			db.persist(s2VIERNES);
+			db.persist(s1SABADO);
+			db.persist(s2SABADO);
+			db.persist(s3SABADO);
+			db.persist(s1DOMINGO);
+			db.persist(s2DOMINGO);
+			db.persist(s3DOMINGO);
+			
 
 	
 			db.getTransaction().commit();
@@ -328,7 +393,7 @@ public void open(){
 		}
 	}
 	
-	public List<Sesion> getSesiones(){ //////////SESIONES DEL 7 DE ABRIL AL 13, LUNES A DOMINGO
+	public List<Sesion> getSesiones(){ //////////SESIONES DEL 7 DE ABRIL AL 13, LUNES A DOMINGO. Tengo que pnerlo el 14 porque sólo es hasta 00:00
 		System.out.println(">> DataAccess: getSesiones");
 		List<Sesion> res = new ArrayList<>();
 		
@@ -337,7 +402,7 @@ public void open(){
 			//////inicioSemana y finSemana//////////////
 			SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 	        Date inicioSemana = formato.parse("07/04/2025");
-	        Date finSemana = formato.parse("13/04/2025");
+	        Date finSemana = formato.parse("14/04/2025");
 
 			TypedQuery<Sesion> query = db.createQuery("SELECT s FROM Sesion s WHERE s.date BETWEEN ?1 and ?2 ORDER BY s.date, s.horaImpartición",Sesion.class);   
 			query.setParameter(1, inicioSemana);
@@ -364,7 +429,7 @@ public void open(){
 			//////inicioSemana y finSemana//////////////
 			SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 	        Date inicioSemana = formato.parse("07/04/2025");
-	        Date finSemana = formato.parse("13/04/2025");
+	        Date finSemana = formato.parse("14/04/2025");
 
 			TypedQuery<Sesion> query = db.createQuery("SELECT s FROM Sesion s WHERE s.actividad.gradoExigencia=?1 AND s.date BETWEEN ?2 and ?3 ORDER BY s.date, s.horaImpartición",Sesion.class);   
 			query.setParameter(1, gradoExig);

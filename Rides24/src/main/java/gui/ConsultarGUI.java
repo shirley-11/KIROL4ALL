@@ -3,6 +3,10 @@ package gui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import businessLogic.BLFacade;
+import domain.Sesion;
+
 import java.awt.Font;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
@@ -18,15 +22,16 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 public class ConsultarGUI extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JScrollPane scrollPaneSesiones;
-	private JList<String> listSesiones = null;
-	private DefaultListModel<String> sesionesInfo = new DefaultListModel<String>();
+	private JList<Sesion> listSesiones;
+	private DefaultListModel<Sesion> sesionesInfo = new DefaultListModel<Sesion>();
 	
-	private JComboBox<String> comboBoxGradoExig = null;
-	private DefaultComboBoxModel<String> gradosExigencia = new DefaultComboBoxModel<String>();
+	private JComboBox<Integer> comboBoxGradoExig;
+	private DefaultComboBoxModel<Integer> gradosExigencia = new DefaultComboBoxModel<Integer>();
 	
 	private JButton btnVolver;
 	private JButton btnVerSesiones;
@@ -35,7 +40,7 @@ public class ConsultarGUI extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public ConsultarGUI(MainGUIKirol mainGUIKirol) {
+	public ConsultarGUI(MainGUIKirol mainGUIKirol) {		
 		setBackground(new Color(203, 234, 254));
 		setLayout(null);
 		
@@ -50,15 +55,8 @@ public class ConsultarGUI extends JPanel {
 		lblBuscarPor.setBounds(61, 79, 337, 53);
 		add(lblBuscarPor);
 		
-		scrollPaneSesiones = new JScrollPane();///////////////////////////////////LISTASESIONES///////////////////////////////
-		scrollPaneSesiones.setBounds(82, 142, 421, 130);
-		add(scrollPaneSesiones);
 		
-		listSesiones = new JList<String>();
-		listSesiones.setModel(sesionesInfo);
-		scrollPaneSesiones.setViewportView(listSesiones);
-
-		comboBoxGradoExig = new JComboBox<String>();///////////////////////////////////CBOXGRADOS///////////////////////////////
+		comboBoxGradoExig = new JComboBox<Integer>();///////////////////////////////////CBOXGRADOS///////////////////////////////
 		comboBoxGradoExig.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -66,16 +64,30 @@ public class ConsultarGUI extends JPanel {
 			}
 		});
 		comboBoxGradoExig.setModel(gradosExigencia);
-		gradosExigencia.addElement("ALTO");
-		gradosExigencia.addElement("BAJO");
+		for (int i = 1; i<=5; i++) {
+			gradosExigencia.addElement(i);
+		}
 		comboBoxGradoExig.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {///////AL SELECCIONAR UN GRADO
 				sesionesInfo.clear();
-				sesionesInfo.addElement("1 " + comboBoxGradoExig.getSelectedItem());
+				BLFacade bl = MainGUIKirol.getBusinessLogic();
+				int grado = Integer.parseInt(comboBoxGradoExig.getSelectedItem().toString());
+				List<Sesion> sesionesGrado = bl.getSesionesG(grado);
+				sesionesInfo.addAll(sesionesGrado);
 			}
 		});
-		comboBoxGradoExig.setBounds(408, 88, 130, 37);
+		comboBoxGradoExig.setBounds(408, 88, 54, 37);
 		add(comboBoxGradoExig);
+		
+		
+		scrollPaneSesiones = new JScrollPane();///////////////////////////////////LISTASESIONES///////////////////////////////
+		scrollPaneSesiones.setBounds(82, 142, 421, 130);
+		add(scrollPaneSesiones);
+		
+		listSesiones = new JList<Sesion>();
+		listSesiones.setModel(sesionesInfo);
+		scrollPaneSesiones.setViewportView(listSesiones);
+		
 		
 		
 		btnVerSesiones = new JButton("Ver todas las sesiones");///////////////////////////////////BTNVERSESIONES///////////////////////////////
@@ -88,7 +100,9 @@ public class ConsultarGUI extends JPanel {
 		btnVerSesiones.addActionListener(new ActionListener() {////AL DARLE CLICK CARGAR TODAS LAS SESIONES
 			public void actionPerformed(ActionEvent e) {
 				sesionesInfo.clear();
-				sesionesInfo.addElement("Sesion1 sin info");
+				BLFacade bl = MainGUIKirol.getBusinessLogic();
+				List<Sesion> sesionesGrado = bl.getSesiones();
+				sesionesInfo.addAll(sesionesGrado);
 			}
 		});
 		btnVerSesiones.setFont(new Font("Tahoma", Font.BOLD, 13));

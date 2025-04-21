@@ -2,6 +2,7 @@ package domain;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -93,5 +94,15 @@ public class Sesion implements Serializable{
 	public int getNReservasHechas () {return reservasHechas;}
 	public void setNReservasHechas (int n) {this.reservasHechas = n;}
 	
+	//////TOSTRING
+	@Override
+	public String toString() {
+		SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+	    String fechaFormateada = formatoFecha.format(date);
+		
+	    return actividad.getNombre() + " en " + sala.getNombre() + " el " + fechaFormateada + " a las " + horaImpartición + 
+	            " | Exigencia: " + actividad.getGradoExigencia();
+	}
+
 
 }
