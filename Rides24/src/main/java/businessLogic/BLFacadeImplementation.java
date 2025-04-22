@@ -23,6 +23,7 @@ import exceptions.SocioRegistradoException;
 import exceptions.ActAlreadyExistsException;
 import exceptions.ErrorPagoException;
 import exceptions.IncorrectPasswordException;
+import exceptions.NoMasReservasException;
 /**
  * It implements the business logic as a web service.
  */
@@ -163,7 +164,7 @@ public class BLFacadeImplementation  implements BLFacade {
     
     /////////////SOCIO///////////////////////////////
     @WebMethod 
-    public String reservarSesion(Socio socioR, Sesion si) {   	
+    public String reservarSesion(Socio socioR, Sesion si) throws NoMasReservasException {   	
     	dbManager.open();
     	String resultado = dbManager.reservarSesion(socioR, si);
     	dbManager.close();

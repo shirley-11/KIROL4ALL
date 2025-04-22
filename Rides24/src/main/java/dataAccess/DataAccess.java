@@ -36,6 +36,7 @@ import exceptions.RideMustBeLaterThanTodayException;
 import exceptions.ActAlreadyExistsException;
 import exceptions.ErrorPagoException;
 import exceptions.IncorrectPasswordException;
+import exceptions.NoMasReservasException;
 import exceptions.SocioNoRegistradoException;
 import exceptions.SocioRegistradoException;
 
@@ -455,22 +456,28 @@ public void open(){
 	}
 	
 	//////////////////////////////////////SOCIO///////////////////////
-	public String reservarSesion(Socio socioR, Sesion si) {
-		int reservasDisponibles = socioR.getNumMaxReservas();
+	public String reservarSesion(Socio socioR, Sesion si) throws NoMasReservasException {
+		Sesion sesionbd = db.find(Sesion.class, si.getIdSesion());
+		Socio sociobd = db.find(Socio.class, socioR.getCorreo());
+		int reservasDisponibles = sociobd.getNumMaxReservas();
 		if (reservasDisponibles == 0) {
-			return "El socio: " + socioR.getNombre() + " no puede hacer más reservas";
+			throw new NoMasReservasException ( "El socio: " + sociobd.getNombre() + " no puede hacer más reservas");
 		}
 		else {
-			String resultado = "";
+			String resultado = "Error en dataAcces reservarSesion";
 			try {
+				db.getTransaction().begin();
 				SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 		        Date fechaReserva = formato.parse("07/04/2025");
-				Reserva reserva = new Reserva(socioR, si, fechaReserva);
-				resultado = si.addReserva(reserva);
-				socioR.setNumMaxReservas(reservasDisponibles - 1);
-				db.getTransaction().begin();
+				Reserva reserva = new Reserva(sociobd, sesionbd, fechaReserva);				
+				sociobd.setNumMaxReservas(reservasDisponibles - 1);
+				resultado = sesionbd.addReserva(reserva);
+				
 				db.persist(reserva);
 				db.getTransaction().commit();
+				
+				resultado = resultado + " " + reserva.getIdReserva();
+				
 				
 			}catch(ParseException e) {
 	            e.printStackTrace();

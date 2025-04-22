@@ -48,6 +48,11 @@ public class SocioMenuGUI extends JPanel {
 		
 		
 		btnReservarSesion = new JButton("Reservar Sesi\u00F3n");//////////////////////////////////////////////////////////////BTNRESERVAR
+		btnReservarSesion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				mainGUIKirol.enseñarReservarS(s);
+			}
+		});
 		btnReservarSesion.addMouseListener(new MouseAdapter() {////////////CURSOR MANO
 			@Override
 			public void mouseEntered(MouseEvent e) {

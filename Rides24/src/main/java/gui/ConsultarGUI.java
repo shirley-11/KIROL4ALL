@@ -101,8 +101,8 @@ public class ConsultarGUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				sesionesInfo.clear();
 				BLFacade bl = MainGUIKirol.getBusinessLogic();
-				List<Sesion> sesionesGrado = bl.getSesiones();
-				sesionesInfo.addAll(sesionesGrado);
+				List<Sesion> sesiones = bl.getSesiones();
+				sesionesInfo.addAll(sesiones);
 			}
 		});
 		btnVerSesiones.setFont(new Font("Tahoma", Font.BOLD, 13));

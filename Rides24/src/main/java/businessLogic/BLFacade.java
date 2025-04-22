@@ -18,6 +18,7 @@ import exceptions.SocioRegistradoException;
 import exceptions.ActAlreadyExistsException;
 import exceptions.ErrorPagoException;
 import exceptions.IncorrectPasswordException;
+import exceptions.NoMasReservasException;
 import exceptions.RideAlreadyExistException;
 
 import javax.jws.WebMethod;
@@ -116,7 +117,7 @@ public interface BLFacade  {
 	 * Metodo que devuelve si la reserva que ha realizado el socio está en OK o ESPERA
 	 * 
 	 */
-	@WebMethod public String reservarSesion(Socio socioR, Sesion si);
+	@WebMethod public String reservarSesion(Socio socioR, Sesion si) throws NoMasReservasException;
 	
 	/**
 	 * Metodo que devuelve las reservas de un socio

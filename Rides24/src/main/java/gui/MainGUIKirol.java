@@ -221,4 +221,11 @@ public class MainGUIKirol extends JFrame {
 		setTitle(e.getNombre());
 	}
 	
+	public void enseñarReservarS(Socio s) {
+		ReservarSesionGUI reservarSesionPanel = new ReservarSesionGUI(this, s);
+		cardPanel.add(reservarSesionPanel, "RESERVARSESION");
+		cardLayout.show(cardPanel, "RESERVARSESION");
+		setTitle(s.getNombre());
+	}
+	
 }
