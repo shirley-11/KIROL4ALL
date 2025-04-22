@@ -7,12 +7,15 @@ import java.util.List;
 import domain.Ride;
 import domain.Sesion;
 import domain.Socio;
+import domain.Actividad;
 import domain.Driver;
+import domain.Encargado;
 import domain.Factura;
 import domain.Reserva;
 import exceptions.RideMustBeLaterThanTodayException;
 import exceptions.SocioNoRegistradoException;
 import exceptions.SocioRegistradoException;
+import exceptions.ActAlreadyExistsException;
 import exceptions.ErrorPagoException;
 import exceptions.IncorrectPasswordException;
 import exceptions.RideAlreadyExistException;
@@ -136,6 +139,18 @@ public interface BLFacade  {
 	 * Metodo que paga la factura no pagada del socio
 	 */
 	@WebMethod public String pagarFactura(int nfact) throws ErrorPagoException;
+	
+	/**
+	 * Metodo que verifica que la cuenta existe y las credenciales son correctas
+	 * @param correo del Encargado
+	 * @param contrasena
+	 */
+	@WebMethod public Encargado hacerLoginEncargado(String correo, String contrasena) throws SocioNoRegistradoException, IncorrectPasswordException;
+	
+	/**
+	 * Metodo que añade una actividad
+	 */
+	@WebMethod public Actividad añadirActividad(String nombre, int gExig, int precio) throws ActAlreadyExistsException;
 	
 	
 	

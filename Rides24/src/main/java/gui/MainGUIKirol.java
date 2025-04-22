@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import businessLogic.BLFacade;
+import domain.Encargado;
 import domain.Socio;
 
 import java.awt.CardLayout;
@@ -211,6 +212,13 @@ public class MainGUIKirol extends JFrame {
 		cardPanel.add(socioMenuPanel, "SOCIOMENU");
 		cardLayout.show(cardPanel, "SOCIOMENU");
 		setTitle(s.getNombre());
+	}
+	
+	public void enseñarEncargadoMenu(Encargado e) {
+		EncargadoMenuGUI encargadoMenuPanel = new EncargadoMenuGUI(this, e);
+		cardPanel.add(encargadoMenuPanel, "ENCARGADOMENU");
+		cardLayout.show(cardPanel, "ENCARGADOMENU");
+		setTitle(e.getNombre());
 	}
 	
 }

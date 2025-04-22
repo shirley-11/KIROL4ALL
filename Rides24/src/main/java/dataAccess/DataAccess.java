@@ -24,6 +24,7 @@ import configuration.UtilDate;
 import domain.API_Banco;
 import domain.Actividad;
 import domain.Driver;
+import domain.Encargado;
 import domain.Factura;
 import domain.Reserva;
 import domain.Ride;
@@ -32,6 +33,7 @@ import domain.Sesion;
 import domain.Socio;
 import exceptions.RideAlreadyExistException;
 import exceptions.RideMustBeLaterThanTodayException;
+import exceptions.ActAlreadyExistsException;
 import exceptions.ErrorPagoException;
 import exceptions.IncorrectPasswordException;
 import exceptions.SocioNoRegistradoException;
@@ -177,6 +179,8 @@ public class DataAccess  {
 			Sesion s1DOMINGO = new Sesion (act1Pilates, sala5Compacta, fechaDOMINGO, "09:00");
 			Sesion s2DOMINGO = new Sesion (act2Yoga, sala5Compacta, fechaDOMINGO, "10:00");
 			Sesion s3DOMINGO = new Sesion (act8CiclismoIndoor, sala1Max, fechaDOMINGO, "10:00");
+			////////////////////////////////////////////ENCARGADOS//////////////
+			Encargado e= new Encargado("Ane Fernández", "encargado@gmail.com", "encargado");
 			
 			
 			db.persist(socio1);/////SOCIOS
@@ -215,6 +219,8 @@ public class DataAccess  {
 			db.persist(s1DOMINGO);
 			db.persist(s2DOMINGO);
 			db.persist(s3DOMINGO);
+			////////////////////ENCARGADO
+			db.persist(e);
 			
 
 	
@@ -567,6 +573,33 @@ public void open(){
 		
 		
 	}
+	
+	//////////////////////////////////////////////ENCARGADO////////////////////////////////////////
+	public Encargado hacerLoginEncargado(String correo, String contrasena) throws SocioNoRegistradoException, IncorrectPasswordException{
+		Encargado e = db.find(Encargado.class, correo);
+		if(e==null) {
+			throw new SocioNoRegistradoException("Este correo no es válido, introdúcelo correctamente.");
+		} 
+		else if(!e.getContrasena().equals(contrasena)){
+			throw new IncorrectPasswordException("Contraseña incorrecta, inténtalo de nuevo.");
+		}
+		else return e;
+	}
+	
+	public Actividad añadirActividad(String nombre, int gExig, int precio) throws ActAlreadyExistsException {
+		Actividad existente = db.find(Actividad.class, nombre);
+		if(existente!=null) {
+			throw new ActAlreadyExistsException("Esta actividad ya existe.");
+		}
+		else {
+			existente = new Actividad(nombre, gExig, precio);
+			db.getTransaction().begin();
+			db.persist(existente);
+			db.getTransaction().commit();
+			return db.find(Actividad.class, existente.getNombre());
+		}
+	}
+	
 	
 	
 	

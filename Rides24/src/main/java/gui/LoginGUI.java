@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import businessLogic.BLFacade;
+import domain.Encargado;
 import domain.Socio;
 import exceptions.IncorrectPasswordException;
 import exceptions.SocioNoRegistradoException;
@@ -24,6 +25,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JTextArea;
+import javax.swing.JCheckBox;
 
 public class LoginGUI extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -32,6 +34,7 @@ public class LoginGUI extends JPanel {
 	private JButton btnEntrar;
 	private JButton btnVolver;
 	private JTextArea textAreaAviso;
+	private JCheckBox chckbxEncargado;
 
 	/**
 	 * Create the panel.
@@ -44,19 +47,19 @@ public class LoginGUI extends JPanel {
 		JLabel lblIntroducirDatos = new JLabel("Introduce los datos");
 		lblIntroducirDatos.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblIntroducirDatos.setHorizontalAlignment(SwingConstants.CENTER);
-		lblIntroducirDatos.setBounds(181, 70, 191, 41);
+		lblIntroducirDatos.setBounds(201, 55, 191, 41);
 		add(lblIntroducirDatos);
 		
 		JLabel lblCorreo = new JLabel("Correo");
 		lblCorreo.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblCorreo.setHorizontalAlignment(SwingConstants.LEFT);
-		lblCorreo.setBounds(87, 128, 93, 38);
+		lblCorreo.setBounds(87, 104, 93, 38);
 		add(lblCorreo);
 		
 		JLabel lblCONTRASEÑA = new JLabel("Contrase\u00F1a");
 		lblCONTRASEÑA.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCONTRASEÑA.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblCONTRASEÑA.setBounds(87, 176, 93, 38);
+		lblCONTRASEÑA.setBounds(87, 152, 93, 38);
 		add(lblCONTRASEÑA);
 		
 		textAreaAviso = new JTextArea();
@@ -71,34 +74,61 @@ public class LoginGUI extends JPanel {
 		textAreaAviso.setOpaque(false); // sin fondo
 		textAreaAviso.setBorder(null); // sin borde
 		
+		chckbxEncargado = new JCheckBox("\u00BFEres encargado?");///////////////////////////////////////////////checkbox
+		chckbxEncargado.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				chckbxEncargado.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			}
+		});
+		chckbxEncargado.setHorizontalAlignment(SwingConstants.CENTER);
+		chckbxEncargado.setBounds(240, 198, 143, 32);
+		add(chckbxEncargado);
+		chckbxEncargado.setSelected(false);
+		chckbxEncargado.setOpaque(false);
+		chckbxEncargado.setBorder(null);
 
 		
 		
 		textFieldCORREO = new JTextField();
-		textFieldCORREO.setBounds(201, 121, 208, 38);
+		textFieldCORREO.setBounds(201, 106, 208, 38);
 		add(textFieldCORREO);
 		textFieldCORREO.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(201, 178, 208, 38);
+		passwordField.setBounds(201, 154, 208, 38);
 		add(passwordField);
 		
 		btnEntrar = new JButton("Iniciar Sesion");///////////////////////////////////////////////////////////////////////////////////BTNENTRAR
 		btnEntrar.addActionListener(new ActionListener() {///////PULSAR
 			public void actionPerformed(ActionEvent e) {
-				try {
-					BLFacade bl = MainGUIKirol.getBusinessLogic();
-					Socio s = bl.hacerLogin(textFieldCORREO.getText(), new String(passwordField.getPassword()));
+				if(chckbxEncargado.isSelected()) {//////////////////////ENCARGADO	
+					try {		
+						BLFacade bl = MainGUIKirol.getBusinessLogic();
+						Encargado encargado = bl.hacerLoginEncargado(textFieldCORREO.getText(), new String(passwordField.getPassword()));										
+						mainGUIKirol.enseñarEncargadoMenu(encargado);		
+					}catch (SocioNoRegistradoException eNoregistrado) {
+						textAreaAviso.setVisible(true); // visible sólo cuando hay error
+						textAreaAviso.setText(eNoregistrado.getMessage());
+					}catch (IncorrectPasswordException eIncorrecto) {
+						textAreaAviso.setVisible(true); // visible sólo cuando hay error
+						textAreaAviso.setText(eIncorrecto.getMessage());
+					}
 					
-					
-					mainGUIKirol.enseñarSocioMenu(s);		
-				}catch (SocioNoRegistradoException eNoregistrado) {
-					textAreaAviso.setVisible(true); // visible sólo cuando hay error
-					textAreaAviso.setText(eNoregistrado.getMessage());
-				}catch (IncorrectPasswordException eIncorrecto) {
-					textAreaAviso.setVisible(true); // visible sólo cuando hay error
-					textAreaAviso.setText(eIncorrecto.getMessage());
+				}else {//////////////////////NO ES ENCARGADO
+					try {		
+						BLFacade bl = MainGUIKirol.getBusinessLogic();
+						Socio s = bl.hacerLogin(textFieldCORREO.getText(), new String(passwordField.getPassword()));										
+						mainGUIKirol.enseñarSocioMenu(s);		
+					}catch (SocioNoRegistradoException eNoregistrado) {
+						textAreaAviso.setVisible(true); // visible sólo cuando hay error
+						textAreaAviso.setText(eNoregistrado.getMessage());
+					}catch (IncorrectPasswordException eIncorrecto) {
+						textAreaAviso.setVisible(true); // visible sólo cuando hay error
+						textAreaAviso.setText(eIncorrecto.getMessage());
+					}
 				}
+				
 				
 			}
 		});
@@ -109,7 +139,7 @@ public class LoginGUI extends JPanel {
 			}
 		});
 		btnEntrar.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnEntrar.setBounds(198, 236, 208, 38);
+		btnEntrar.setBounds(201, 236, 208, 38);
 		add(btnEntrar);
 		
 		btnVolver = new JButton("Volver"); ///////////////////////////////////////////////////////////////////////////////////BTNVOLVER
@@ -128,6 +158,8 @@ public class LoginGUI extends JPanel {
 		btnVolver.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnVolver.setBounds(20, 312, 93, 38);
 		add(btnVolver);
+		
+		
 		
 		
 		
@@ -160,6 +192,10 @@ public class LoginGUI extends JPanel {
 		        int anchopasswordField = passwordField.getWidth();
 		        passwordField.setBounds((anchoPanel - anchopasswordField) / 2, passwordField.getY(), anchopasswordField, passwordField.getHeight());
 		        
+		        //Centrar chckbxEncargado
+		        int anchochckbxEncargado = chckbxEncargado.getWidth();
+		        chckbxEncargado.setBounds((anchoPanel - anchochckbxEncargado) / 2, chckbxEncargado.getY(), anchochckbxEncargado, chckbxEncargado.getHeight());
+		        
 		    }
 		});		
 
@@ -169,6 +205,7 @@ public class LoginGUI extends JPanel {
 		textFieldCORREO.setText("");
 		passwordField.setText("");
 		textAreaAviso.setText("");
+		chckbxEncargado.setSelected(false);
 		
 	}
 }

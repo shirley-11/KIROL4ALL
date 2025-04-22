@@ -11,13 +11,16 @@ import dataAccess.DataAccess;
 import domain.Ride;
 import domain.Sesion;
 import domain.Socio;
+import domain.Actividad;
 import domain.Driver;
+import domain.Encargado;
 import domain.Factura;
 import domain.Reserva;
 import exceptions.RideMustBeLaterThanTodayException;
 import exceptions.RideAlreadyExistException;
 import exceptions.SocioNoRegistradoException;
 import exceptions.SocioRegistradoException;
+import exceptions.ActAlreadyExistsException;
 import exceptions.ErrorPagoException;
 import exceptions.IncorrectPasswordException;
 /**
@@ -197,6 +200,23 @@ public class BLFacadeImplementation  implements BLFacade {
 		String pago = dbManager.pagarFactura(nfact);
 		dbManager.close();
 		return pago;
+	}
+	
+	///////////////////ENCARGADO
+	@WebMethod 
+	public Encargado hacerLoginEncargado(String correo, String contrasena) throws SocioNoRegistradoException, IncorrectPasswordException{
+		dbManager.open();
+    	Encargado login = dbManager.hacerLoginEncargado(correo, contrasena);
+    	dbManager.close();
+    	return login;
+	}
+	
+	@WebMethod 
+	public Actividad añadirActividad(String nombre, int gExig, int precio) throws ActAlreadyExistsException {
+		dbManager.open();
+		Actividad r = dbManager.añadirActividad(nombre, gExig, precio);
+    	dbManager.close();
+    	return r;
 	}
     
 
