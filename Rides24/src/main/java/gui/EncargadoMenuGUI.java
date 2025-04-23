@@ -17,6 +17,7 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ActionEvent;
 
 public class EncargadoMenuGUI extends JPanel {
+	private static final long serialVersionUID = 1L;
 
 	private JTextArea textAreaTitulo;
 	private JButton btnAñadirActividad;

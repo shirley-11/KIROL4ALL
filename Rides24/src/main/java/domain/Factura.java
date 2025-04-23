@@ -1,6 +1,7 @@
 package domain;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -74,6 +75,17 @@ public class Factura implements Serializable{
 	////////////////////////////
 	public Date getFechaFac() {return fechaFac;}
 	public void setFechaFac(Date fechaFac) {this.fechaFac = fechaFac;}
+	////////////////////////////
+
+	@Override
+	public String toString() {
+		SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+	    String fechaFormateadaR = formatoFecha.format(fechaFac);
+		
+		return "Factura nº: " + idFactura + " SOCIO: " + socioFac.getNombre() + " ESTADO: " + estado + " PRECIO: "
+				+ precioTotal + " RESERVAS: ||" + reservasPagar + "|| FECHA FACTURA: " + fechaFormateadaR ;
+	}
+	
 	
 
 }

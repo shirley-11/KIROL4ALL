@@ -84,7 +84,7 @@ public class DataAccess  {
             return new java.sql.Date(fechaUtil.getTime());
         } catch (ParseException e) {
             e.printStackTrace();
-            return null; // O podrías lanzar una excepción personalizada si quieres
+            return null; //
         }
     }
 
@@ -554,9 +554,10 @@ public void open(){
 	
 	public List<Factura> getFacturas (Socio socio){
 		System.out.println(">> DataAccess: getFacturas");
+		Socio sociodb = db.find(Socio.class, socio.getCorreo());
 		List<Factura> res = new ArrayList<>();
 		TypedQuery<Factura> queryFactura = db.createQuery("SELECT f FROM Factura f WHERE f.socioFac=?1 AND f.estado=?2 ORDER BY f.fechaFac, f.idFactura",Factura.class);   
-		queryFactura.setParameter(1, socio);
+		queryFactura.setParameter(1, sociodb);
 		queryFactura.setParameter(2, "NOPAGADO");
 		
 		List<Factura> facturas = queryFactura.getResultList();
@@ -609,6 +610,39 @@ public void open(){
 			db.persist(existente);
 			db.getTransaction().commit();
 			return db.find(Actividad.class, existente.getNombre());
+		}
+	}
+	
+	public Sesion añadirSesion(Actividad actividad, Sala sala, String date, String horaImparticion) throws ActAlreadyExistsException{
+		TypedQuery<Sesion> query = db.createQuery("SELECT s FROM Sesion s WHERE s.actividad=?1 AND s.sala=?2 AND s.date=?3 AND s.horaImpartición=?4",Sesion.class);   
+		query.setParameter(1, actividad);
+		query.setParameter(2, sala);
+		java.sql.Date dateQ = this.convertirStringADate(date);
+		query.setParameter(3, dateQ);
+		query.setParameter(4, horaImparticion);
+		
+		List<Sesion> sesiones = query.getResultList();
+		if(!sesiones.isEmpty()) {
+			throw new ActAlreadyExistsException("Esta sesión ya existe");
+		}
+		else {
+			TypedQuery<Sesion> query2 = db.createQuery("SELECT s FROM Sesion s WHERE s.sala=?1 AND s.date=?2 AND s.horaImpartición=?3",Sesion.class);   
+			query2.setParameter(1, sala);
+			query2.setParameter(2, dateQ);
+			query2.setParameter(3, horaImparticion);
+			List<Sesion> sesiones2 = query2.getResultList();
+			if(!sesiones2.isEmpty()){
+				throw new ActAlreadyExistsException("Ya hay una sesión en este mismo lugar y hora");
+			}
+			else {
+				java.sql.Date fechaSesion = this.convertirStringADate(date);
+				Sesion s = new Sesion(actividad, sala, fechaSesion, horaImparticion);
+				db.getTransaction().begin();
+				db.persist(s);
+				db.getTransaction().commit();
+				return db.find(Sesion.class, s.getIdSesion());
+			}
+			
 		}
 	}
 	

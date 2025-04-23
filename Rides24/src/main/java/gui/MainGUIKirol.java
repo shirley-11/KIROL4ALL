@@ -233,5 +233,11 @@ public class MainGUIKirol extends JFrame {
 		cardLayout.show(cardPanel, "CANCELARR");
 		setTitle(s.getNombre());
 	}
+	public void enseñarPagarR(Socio s) {
+		PagarFacturasGUI pagarFacturasPanel = new PagarFacturasGUI(this, s);
+		cardPanel.add(pagarFacturasPanel, "PAGAR");
+		cardLayout.show(cardPanel, "PAGAR");
+		setTitle(s.getNombre());
+	}
 	
 }

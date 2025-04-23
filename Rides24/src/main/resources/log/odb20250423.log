@@ -1,0 +1,754 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-23 13:44:15 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 22296@LAPTOP-9IP7ANLF
+
+[2025-04-23 13:44:15 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-23 13:44:15 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-23 13:44:15 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-23 13:44:15 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-23 13:44:15 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-23 13:44:15 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-23 13:44:15 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-23 13:44:15 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-23 13:44:15 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-23 13:44:15 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-23 13:44:15 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-23 13:44:15 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-23 13:44:15 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-23 13:44:15 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-23 13:44:15 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-23 13:44:15 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-23 13:44:15 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-23 13:44:15 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-23 13:44:15 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-23 13:44:15 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-23 13:44:15 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-23 13:50:14 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 16800@LAPTOP-9IP7ANLF
+
+[2025-04-23 13:50:14 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-23 13:50:14 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-23 13:50:14 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-23 13:50:14 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-23 13:50:14 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-23 13:50:14 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-23 13:50:14 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-23 13:50:14 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-23 13:50:14 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-23 13:50:14 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-23 13:50:14 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-23 13:50:14 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-23 13:50:14 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-23 13:50:14 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-23 13:50:14 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-23 13:50:14 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-23 13:50:14 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-23 13:50:14 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-23 13:50:14 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-23 13:50:14 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-23 13:50:14 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-23 13:54:23 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 19020@LAPTOP-9IP7ANLF
+
+[2025-04-23 13:54:23 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-23 13:54:23 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-23 13:54:23 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-23 13:54:23 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-23 13:54:23 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-23 13:54:23 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-23 13:54:23 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-23 13:54:23 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-23 13:54:23 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-23 13:54:23 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-23 13:54:23 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-23 13:54:23 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-23 13:54:23 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-23 13:54:23 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-23 13:54:23 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-23 13:54:23 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-23 13:54:23 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-23 13:54:23 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-23 13:54:23 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-23 13:54:23 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-23 13:54:23 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-23 13:55:49 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 19328@LAPTOP-9IP7ANLF
+
+[2025-04-23 13:55:49 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-23 13:55:49 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-23 13:55:49 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-23 13:55:49 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-23 13:55:49 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-23 13:55:49 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-23 13:55:49 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-23 13:55:49 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-23 13:55:49 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-23 13:55:49 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-23 13:55:49 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-23 13:55:49 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-23 13:55:49 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-23 13:55:49 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-23 13:55:49 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-23 13:55:49 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-23 13:55:49 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-23 13:55:49 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-23 13:55:49 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-23 13:55:49 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-23 13:55:49 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-23 13:57:49 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 11060@LAPTOP-9IP7ANLF
+
+[2025-04-23 13:57:49 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-23 13:57:49 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-23 13:57:49 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-23 13:57:49 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-23 13:57:49 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-23 13:57:49 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-23 13:57:49 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-23 13:57:49 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-23 13:57:49 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-23 13:57:49 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-23 13:57:49 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-23 13:57:49 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-23 13:57:49 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-23 13:57:49 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-23 13:57:49 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-23 13:57:49 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-23 13:57:49 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-23 13:57:49 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-23 13:57:49 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-23 13:57:49 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-23 13:57:49 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-23 13:58:37 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 7744@LAPTOP-9IP7ANLF
+
+[2025-04-23 13:58:37 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-23 13:58:37 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-23 13:58:37 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-23 13:58:37 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-23 13:58:37 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-23 13:58:37 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-23 13:58:37 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-23 13:58:37 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-23 13:58:37 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-23 13:58:37 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-23 13:58:37 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-23 13:58:37 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-23 13:58:37 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-23 13:58:37 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-23 13:58:37 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-23 13:58:37 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-23 13:58:37 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-23 13:58:37 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-23 13:58:37 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-23 13:58:37 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-23 13:58:37 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-23 16:22:52 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 24544@LAPTOP-9IP7ANLF
+
+[2025-04-23 16:22:52 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-23 16:22:52 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-23 16:22:52 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-23 16:22:52 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-23 16:22:52 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-23 16:22:52 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-23 16:22:52 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-23 16:22:52 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-23 16:22:52 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-23 16:22:52 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-23 16:22:52 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-23 16:22:52 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-23 16:22:52 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-23 16:22:52 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-23 16:22:52 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-23 16:22:52 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-23 16:22:52 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-23 16:22:52 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-23 16:22:52 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-23 16:22:52 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-23 16:22:52 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-23 16:23:58 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 19656@LAPTOP-9IP7ANLF
+
+[2025-04-23 16:23:58 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-23 16:23:58 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-23 16:23:58 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-23 16:23:58 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-23 16:23:58 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-23 16:23:58 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-23 16:23:58 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-23 16:23:58 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-23 16:23:58 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-23 16:23:58 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-23 16:23:58 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-23 16:23:58 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-23 16:23:58 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-23 16:23:58 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-23 16:23:58 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-23 16:23:58 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-23 16:23:58 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-23 16:23:58 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-23 16:23:58 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-23 16:23:58 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-23 16:23:58 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-23 17:11:29 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 23408@LAPTOP-9IP7ANLF
+
+[2025-04-23 17:11:29 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-23 17:11:29 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-23 17:11:29 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-23 17:11:29 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-23 17:11:29 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-23 17:11:29 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-23 17:11:29 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-23 17:11:29 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-23 17:11:29 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-23 17:11:29 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-23 17:11:29 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-23 17:11:29 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-23 17:11:29 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-23 17:11:29 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-23 17:11:29 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-23 17:11:29 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-23 17:11:29 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-23 17:11:29 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-23 17:11:29 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-23 17:11:29 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-23 17:11:29 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-23 17:20:32 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 8916@LAPTOP-9IP7ANLF
+
+[2025-04-23 17:20:32 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-23 17:20:32 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-23 17:20:32 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-23 17:20:32 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-23 17:20:32 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-23 17:20:32 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-23 17:20:32 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-23 17:20:32 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-23 17:20:32 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-23 17:20:32 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-23 17:20:32 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-23 17:20:32 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-23 17:20:32 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-23 17:20:32 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-23 17:20:32 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-23 17:20:32 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-23 17:20:32 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-23 17:20:32 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-23 17:20:32 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-23 17:20:32 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-23 17:20:32 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+[2025-04-23 17:20:38 #23 type.registry] 
+New type domain.Factura
+
+[2025-04-23 17:20:38 #24 type] 
+Type domain.Factura is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-23 17:21:57 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 5532@LAPTOP-9IP7ANLF
+
+[2025-04-23 17:21:57 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-23 17:21:57 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-23 17:21:57 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-23 17:21:57 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-23 17:21:57 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-23 17:21:57 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-23 17:21:57 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-23 17:21:57 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-23 17:21:57 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-23 17:21:57 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-23 17:21:57 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-23 17:21:57 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-23 17:21:57 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-23 17:21:57 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-23 17:21:57 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-23 17:21:57 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-23 17:21:57 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-23 17:21:57 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-23 17:21:57 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-23 17:21:57 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-23 17:21:57 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+

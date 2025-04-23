@@ -9,6 +9,7 @@ import javax.jws.WebService;
 import configuration.ConfigXML;
 import dataAccess.DataAccess;
 import domain.Ride;
+import domain.Sala;
 import domain.Sesion;
 import domain.Socio;
 import domain.Actividad;
@@ -216,6 +217,13 @@ public class BLFacadeImplementation  implements BLFacade {
 	public Actividad añadirActividad(String nombre, int gExig, int precio) throws ActAlreadyExistsException {
 		dbManager.open();
 		Actividad r = dbManager.añadirActividad(nombre, gExig, precio);
+    	dbManager.close();
+    	return r;
+	}
+	@WebMethod 
+	public Sesion añadirSesion(Actividad actividad, Sala sala, String date, String horaImparticion) throws ActAlreadyExistsException{
+		dbManager.open();
+		Sesion r = dbManager.añadirSesion(actividad, sala, date, horaImparticion);
     	dbManager.close();
     	return r;
 	}

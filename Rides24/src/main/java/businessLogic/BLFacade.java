@@ -5,6 +5,7 @@ import java.util.List;
 
 //import domain.Booking;
 import domain.Ride;
+import domain.Sala;
 import domain.Sesion;
 import domain.Socio;
 import domain.Actividad;
@@ -152,6 +153,11 @@ public interface BLFacade  {
 	 * Metodo que añade una actividad
 	 */
 	@WebMethod public Actividad añadirActividad(String nombre, int gExig, int precio) throws ActAlreadyExistsException;
+	
+	/**
+	 * Metodo que añade una sesion
+	 */
+	@WebMethod public Sesion añadirSesion(Actividad actividad, Sala sala, String date, String horaImparticion) throws ActAlreadyExistsException;
 	
 	
 	

@@ -21,6 +21,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class SocioMenuGUI extends JPanel {
+	private static final long serialVersionUID = 1L;
+	
 	private JButton btnReservarSesion;
 	private JButton btnCancelarReserva;
 	private JButton btnFacturas;
@@ -48,7 +50,7 @@ public class SocioMenuGUI extends JPanel {
 		
 		
 		btnReservarSesion = new JButton("Reservar Sesi\u00F3n");//////////////////////////////////////////////////////////////BTNRESERVAR
-		btnReservarSesion.addActionListener(new ActionListener() {
+		btnReservarSesion.addActionListener(new ActionListener() {////////////pulsar
 			public void actionPerformed(ActionEvent e) {
 				mainGUIKirol.enseñarReservarS(s);
 			}
@@ -65,7 +67,7 @@ public class SocioMenuGUI extends JPanel {
 		
 		
 		btnCancelarReserva = new JButton("Cancelar Reserva");//////////////////////////////////////////////////////////////BTNCANCELAR RESERVA
-		btnCancelarReserva.addActionListener(new ActionListener() {
+		btnCancelarReserva.addActionListener(new ActionListener() {////////////pulsar
 			public void actionPerformed(ActionEvent e) {
 				mainGUIKirol.enseñarCancelarR(s);
 			}
@@ -81,7 +83,12 @@ public class SocioMenuGUI extends JPanel {
 		add(btnCancelarReserva);
 		
 		
-		btnFacturas = new JButton("Consultar o pagar facturas");//////////////////////////////////////////////////////////////BTNCANCELAR RESERVA
+		btnFacturas = new JButton("Consultar o pagar facturas");//////////////////////////////////////////////////////////////PAGAR FACTURAS
+		btnFacturas.addActionListener(new ActionListener() {////////////pulsar
+			public void actionPerformed(ActionEvent e) {
+				mainGUIKirol.enseñarPagarR(s);
+			}
+		});
 		btnFacturas.addMouseListener(new MouseAdapter() {////////////CURSOR MANO
 			@Override
 			public void mouseEntered(MouseEvent e) {

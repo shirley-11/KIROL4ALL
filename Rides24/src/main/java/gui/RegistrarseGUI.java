@@ -24,6 +24,7 @@ import java.awt.event.MouseEvent;
 
 public class RegistrarseGUI extends JPanel {
 	private static final long serialVersionUID = 1L;
+	
 	private JTextField textFieldNombre;
 	private JTextField textFieldCorreo;
 	private JPasswordField passwordField;

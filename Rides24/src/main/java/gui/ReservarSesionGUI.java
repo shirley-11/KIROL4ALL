@@ -27,6 +27,7 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
 
 public class ReservarSesionGUI extends JPanel {
+	private static final long serialVersionUID = 1L;
 
 	private JLabel lblTituloSeleccione;
 	private JLabel lblRespuestaBoton;
