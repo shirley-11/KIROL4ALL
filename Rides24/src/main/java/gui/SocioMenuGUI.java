@@ -65,6 +65,11 @@ public class SocioMenuGUI extends JPanel {
 		
 		
 		btnCancelarReserva = new JButton("Cancelar Reserva");//////////////////////////////////////////////////////////////BTNCANCELAR RESERVA
+		btnCancelarReserva.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				mainGUIKirol.enseñarCancelarR(s);
+			}
+		});
 		btnCancelarReserva.addMouseListener(new MouseAdapter() {////////////CURSOR MANO
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -83,12 +88,12 @@ public class SocioMenuGUI extends JPanel {
 				btnFacturas.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			}
 		});
-		btnFacturas.setFont(new Font("Tahoma", Font.BOLD, 13));////////////CURSOR MANO
+		btnFacturas.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnFacturas.setBounds(158, 222, 260, 38);
 		add(btnFacturas);
 		
 		
-		btnSalir = new JButton("Salir");//////////////////////////////////////////////////////////////BTNCANCELAR RESERVA
+		btnSalir = new JButton("Salir");//////////////////////////////////////////////////////////////BTNSALIR
 		btnSalir.addActionListener(new ActionListener() {////////////SALIR AL MENU PRINCIPAL
 			public void actionPerformed(ActionEvent e) {
 				mainGUIKirol.volverAMenuPrincipal();

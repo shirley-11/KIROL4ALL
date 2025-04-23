@@ -489,10 +489,11 @@ public void open(){
 	
 	public List<Reserva> getReservas(Socio socioR){
 		System.out.println(">> DataAccess: getReservas");
+		Socio sociodb = db.find(Socio.class, socioR.getCorreo());
 		List<Reserva> resultado = new ArrayList<Reserva>();
 		
 		TypedQuery<Reserva> query = db.createQuery("SELECT r FROM Reserva r WHERE r.socioReserva=?1 ORDER BY r.fechaReserva, r.idReserva",Reserva.class);   
-		query.setParameter(1, socioR);
+		query.setParameter(1, sociodb);
 
 		List<Reserva> reservas = query.getResultList();
 		for (Reserva r:reservas){
@@ -541,6 +542,10 @@ public void open(){
 		///////Hay que restar la reserva cancelada
 		int nReservas = r.getSesionReserva().getNReservasHechas();
 		r.getSesionReserva().setNReservasHechas(nReservas - 1);
+		
+		/////SI EL SOCIO HA CANCELADO PUEDE VOLVER A RESERVAR
+		Socio socioReserva = r.getSocioReserva();
+		socioReserva.setNumMaxReservas(socioReserva.getNumMaxReservas() + 1);
 		
 		db.getTransaction().commit();
 		return true;

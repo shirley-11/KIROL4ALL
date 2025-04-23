@@ -1,7 +1,7 @@
 package domain;
 
 import java.io.Serializable;
-
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -62,6 +62,21 @@ public class Reserva implements Serializable{
 	/////////////////////////
 	public String getEstadoReserva() {return estadoReserva;}
 	public void setEstadoReserva(String h) {this.estadoReserva = h;}
+
+	@Override
+	public String toString() {
+		SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+	    String fechaFormateadaR = formatoFecha.format(fechaReserva);
+	    String fechaFormateadaS = formatoFecha.format(sesionReserva.getDate());
+		
+		
+		return socioReserva.getNombre() + " NReserva:" + idReserva + 
+				 "| Sesion=[" + sesionReserva.getActividad().getNombre()+" el "+ fechaFormateadaS + " a las " + sesionReserva.getHoraImpartición()
+				
+				+ "], fechaReserva=" + fechaFormateadaR + ", estadoReserva=" + estadoReserva + "]";
+	}
+	
+	
 	
 	
 	
