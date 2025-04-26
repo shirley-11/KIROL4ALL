@@ -159,6 +159,14 @@ public interface BLFacade  {
 	 */
 	@WebMethod public Sesion añadirSesion(Actividad actividad, Sala sala, String date, String horaImparticion) throws ActAlreadyExistsException;
 	
+	/**
+	 * Metodo que devuelve las salas del polideportivo
+	 */
+	@WebMethod public List<Sala> getSalas();
 	
+	/**
+	 * Metodo que devuelve las actividades del polideportivo
+	 */
+	@WebMethod public List<Actividad> getActividades();
 	
 }

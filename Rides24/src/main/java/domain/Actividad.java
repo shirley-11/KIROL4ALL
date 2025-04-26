@@ -39,4 +39,10 @@ public class Actividad implements Serializable{
 	public void setPrecio(int p) {this.precio = p;}
 	////////////////////////////////////////////////
 
+	@Override
+	public String toString() {
+		return nombre + ", exigencia: " + gradoExigencia + ", precio: " + precio;
+	}
+	
+
 }

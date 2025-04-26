@@ -239,5 +239,17 @@ public class MainGUIKirol extends JFrame {
 		cardLayout.show(cardPanel, "PAGAR");
 		setTitle(s.getNombre());
 	}
+	public void enseñarAñadir(Encargado enc) {
+		AñadirActividadGUI añadirActPanel = new AñadirActividadGUI(this, enc);
+		cardPanel.add(añadirActPanel, "AÑADIR");
+		cardLayout.show(cardPanel, "AÑADIR");
+		setTitle(enc.getNombre());
+	}
+	public void enseñarPlanificar(Encargado enc) {
+		PlanificarGUI planificarPanel = new PlanificarGUI(this, enc);
+		cardPanel.add(planificarPanel, "PLANIFICAR");
+		cardLayout.show(cardPanel, "PLANIFICAR");
+		setTitle(enc.getNombre());
+	}
 	
 }

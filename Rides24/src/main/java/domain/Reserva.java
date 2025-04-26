@@ -70,10 +70,10 @@ public class Reserva implements Serializable{
 	    String fechaFormateadaS = formatoFecha.format(sesionReserva.getDate());
 		
 		
-		return "[[NReserva:" + idReserva + 
-				 "| Sesion=[" + sesionReserva.getActividad().getNombre()+" el "+ fechaFormateadaS + " a las " + sesionReserva.getHoraImpartición()
+		return "Reserva: " + idReserva + 
+				 "|| Sesion: " + sesionReserva.getActividad().getNombre()+" el "+ fechaFormateadaS + " a las " + sesionReserva.getHoraImpartición()
 				
-				+ "], fechaReserva=" + fechaFormateadaR + ", estadoReserva=" + estadoReserva + "]]";
+				+ " || fechaReserva: " + fechaFormateadaR + ", estado: " + estadoReserva ;
 	}
 	
 	

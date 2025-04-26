@@ -204,7 +204,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		return pago;
 	}
 	
-	///////////////////ENCARGADO
+	///////////////////////////////////////////////////////////////////////////////////////////////////ENCARGADO
 	@WebMethod 
 	public Encargado hacerLoginEncargado(String correo, String contrasena) throws SocioNoRegistradoException, IncorrectPasswordException{
 		dbManager.open();
@@ -220,10 +220,27 @@ public class BLFacadeImplementation  implements BLFacade {
     	dbManager.close();
     	return r;
 	}
+	
 	@WebMethod 
 	public Sesion añadirSesion(Actividad actividad, Sala sala, String date, String horaImparticion) throws ActAlreadyExistsException{
 		dbManager.open();
 		Sesion r = dbManager.añadirSesion(actividad, sala, date, horaImparticion);
+    	dbManager.close();
+    	return r;
+	}
+	
+	@WebMethod 
+	public List<Sala> getSalas(){
+		dbManager.open();
+		List<Sala> r = dbManager.getSalas();
+    	dbManager.close();
+    	return r;
+	}
+	
+	@WebMethod 
+	public List<Actividad> getActividades(){
+		dbManager.open();
+		List<Actividad> r = dbManager.getActividades();
     	dbManager.close();
     	return r;
 	}

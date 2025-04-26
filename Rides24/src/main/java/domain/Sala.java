@@ -54,5 +54,10 @@ public class Sala implements Serializable {
 		System.out.println("\n" + sesiones);
 	}
 	
+	@Override
+	public String toString() {
+		return  nombre + ", aforo: " + aforo;
+	}
+	
 
 }

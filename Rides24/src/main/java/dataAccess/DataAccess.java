@@ -184,6 +184,9 @@ public class DataAccess  {
 			Encargado e= new Encargado("Ane Fernández", "encargado@gmail.com", "encargado");
 			
 			
+			
+			
+			
 			db.persist(socio1);/////SOCIOS
 			db.persist(sala1Max);////SALAS
 			db.persist(sala2Grande);
@@ -222,10 +225,14 @@ public class DataAccess  {
 			db.persist(s3DOMINGO);
 			////////////////////ENCARGADO
 			db.persist(e);
+			/////////////////////RESERVAS PARA EL SOCIO
 			
 
 	
 			db.getTransaction().commit();
+			
+			this.reservarSesion(socio1, s3DOMINGO);
+			
 			System.out.println("Db initialized");
 		}
 		catch (Exception e){
@@ -644,6 +651,31 @@ public void open(){
 			}
 			
 		}
+	}
+	
+	/////// 
+	public List<Sala> getSalas(){
+		System.out.println(">> DataAccess: getSalas");
+		List<Sala> res = new ArrayList<>();
+		
+		TypedQuery<Sala> query = db.createQuery("SELECT s FROM Sala s",Sala.class);   
+		List<Sala> salas = query.getResultList();
+		for (Sala s:salas){
+				res.add(s);
+		}		
+		return res;
+	}
+	
+	public List<Actividad> getActividades(){
+		System.out.println(">> DataAccess: getActividades");
+		List<Actividad> res = new ArrayList<>();
+		
+		TypedQuery<Actividad> query = db.createQuery("SELECT a FROM Actividad a",Actividad.class);   
+		List<Actividad> actividades = query.getResultList();
+		for (Actividad a:actividades){
+				res.add(a);
+		}		
+		return res;
 	}
 	
 	

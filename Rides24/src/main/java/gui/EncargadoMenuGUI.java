@@ -28,7 +28,7 @@ public class EncargadoMenuGUI extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public EncargadoMenuGUI(MainGUIKirol mainGUIKirol, Encargado e) {
+	public EncargadoMenuGUI(MainGUIKirol mainGUIKirol, Encargado enc) {
 		setBackground(new Color(203, 234, 254));
 		setLayout(null);
 		
@@ -42,11 +42,16 @@ public class EncargadoMenuGUI extends JPanel {
 		textAreaTitulo.setWrapStyleWord(true); // que no corte palabras a la mitad
 		textAreaTitulo.setOpaque(false); // sin fondo
 		textAreaTitulo.setBorder(null); // sin borde
-		textAreaTitulo.setText("Hola " + e.getNombre() + ", \n¿Qué desea hacer?");
+		textAreaTitulo.setText("Hola " + enc.getNombre() + ", \n¿Qué desea hacer?");
 
 		
 		
 		btnAñadirActividad = new JButton("A\u00F1adir Actividad");//////////////////////////////////////////////////////////////BTNAÑADIR
+		btnAñadirActividad.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				mainGUIKirol.enseñarAñadir(enc);
+			}
+		});
 		btnAñadirActividad.addMouseListener(new MouseAdapter() {////////////CURSOR MANO
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -59,6 +64,11 @@ public class EncargadoMenuGUI extends JPanel {
 		
 		
 		btnPlanificar = new JButton("Planificar Sesiones");//////////////////////////////////////////////////////////////BTNPLANIFICAR
+		btnPlanificar.addActionListener(new ActionListener() {/////PULSAR
+			public void actionPerformed(ActionEvent e) {
+				mainGUIKirol.enseñarPlanificar(enc);
+			}
+		});
 		btnPlanificar.addMouseListener(new MouseAdapter() {////////////CURSOR MANO
 			@Override
 			public void mouseEntered(MouseEvent e) {
