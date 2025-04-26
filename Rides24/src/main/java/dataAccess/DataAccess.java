@@ -35,6 +35,7 @@ import exceptions.RideAlreadyExistException;
 import exceptions.RideMustBeLaterThanTodayException;
 import exceptions.ActAlreadyExistsException;
 import exceptions.ErrorPagoException;
+import exceptions.IdAlreadyExistsException;
 import exceptions.IncorrectPasswordException;
 import exceptions.NoMasReservasException;
 import exceptions.SocioNoRegistradoException;
@@ -676,6 +677,35 @@ public void open(){
 				res.add(a);
 		}		
 		return res;
+	}
+	
+	public Factura crearFactura(int id, Socio sociof, String date, List<Reserva> reservas) throws IdAlreadyExistsException {
+		Factura facturaExiste = db.find(Factura.class, id);
+		
+		if (facturaExiste != null) {
+			throw new IdAlreadyExistsException ("Este id lo tiene una factura existente");		
+		}
+		else {
+			TypedQuery<Factura> query2 = db.createQuery("SELECT f FROM Factura f WHERE f.socioFac=?1 AND f.reservasPagar=?2", Factura.class);   
+			Socio s = db.find(Socio.class, sociof.getCorreo());			
+			query2.setParameter(1, s);
+			query2.setParameter(2, reservas);
+			List<Factura> facturas = query2.getResultList();
+			if(!facturas.isEmpty()){
+				throw new IdAlreadyExistsException("Estas reservas ya han sido facturadas");
+			}
+			else {
+				db.getTransaction().begin();
+				java.sql.Date fechaFactura = this.convertirStringADate(date);
+				facturaExiste = new Factura (id, s, fechaFactura, reservas);
+				db.persist(facturaExiste);
+				db.getTransaction().commit();
+				return db.find(Factura.class, facturaExiste.getIdFactura());
+				
+			}
+			
+		}
+		
 	}
 	
 	

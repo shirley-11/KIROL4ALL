@@ -18,6 +18,7 @@ import exceptions.SocioNoRegistradoException;
 import exceptions.SocioRegistradoException;
 import exceptions.ActAlreadyExistsException;
 import exceptions.ErrorPagoException;
+import exceptions.IdAlreadyExistsException;
 import exceptions.IncorrectPasswordException;
 import exceptions.NoMasReservasException;
 import exceptions.RideAlreadyExistException;
@@ -168,5 +169,10 @@ public interface BLFacade  {
 	 * Metodo que devuelve las actividades del polideportivo
 	 */
 	@WebMethod public List<Actividad> getActividades();
+	
+	/**
+	 * Metodo que crea una factura
+	 */
+	@WebMethod public Factura crearFactura(int id, Socio sociof, String date, List<Reserva> reservas) throws IdAlreadyExistsException;
 	
 }

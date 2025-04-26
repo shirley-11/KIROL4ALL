@@ -23,6 +23,7 @@ import exceptions.SocioNoRegistradoException;
 import exceptions.SocioRegistradoException;
 import exceptions.ActAlreadyExistsException;
 import exceptions.ErrorPagoException;
+import exceptions.IdAlreadyExistsException;
 import exceptions.IncorrectPasswordException;
 import exceptions.NoMasReservasException;
 /**
@@ -241,6 +242,14 @@ public class BLFacadeImplementation  implements BLFacade {
 	public List<Actividad> getActividades(){
 		dbManager.open();
 		List<Actividad> r = dbManager.getActividades();
+    	dbManager.close();
+    	return r;
+	}
+	
+	@WebMethod 
+	public Factura crearFactura(int id, Socio sociof, String date, List<Reserva> reservas) throws IdAlreadyExistsException {
+		dbManager.open();
+		Factura r = dbManager.crearFactura(id, sociof, date, reservas);
     	dbManager.close();
     	return r;
 	}

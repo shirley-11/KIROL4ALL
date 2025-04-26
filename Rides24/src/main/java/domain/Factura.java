@@ -43,12 +43,13 @@ public class Factura implements Serializable{
 		super();
 	}
 	
-	public Factura(int id, Socio sociof, Date date) {
+	public Factura(int id, Socio sociof, Date date, List<Reserva> reservas) {
 		this.idFactura = id;
 		this.socioFac = sociof;
 		this.estado = "NOPAGADO";
 		this.precioTotal = 0;
 		this.fechaFac = date;
+		this.reservasPagar = reservas;
 	}
 	///////////////////////////////////////////////////////////
 	public int getIdFactura() {return idFactura;}
