@@ -152,7 +152,7 @@ public class CancelarReservaGUI extends JPanel {
 		        int ancholblRespuestaBoton = lblRespuestaBoton.getWidth();
 		        lblRespuestaBoton.setBounds((anchoPanel - ancholblRespuestaBoton) / 2, lblRespuestaBoton.getY(), ancholblRespuestaBoton, lblRespuestaBoton.getHeight());
 		        
-		        // Centrar scrollPaneSesiones
+		        // Centrar scrollPaneReservas
 		        int anchoscrollPaneReservas = scrollPaneReservas.getWidth();
 		        scrollPaneReservas.setBounds((anchoPanel - anchoscrollPaneReservas) / 2, scrollPaneReservas.getY(), anchoscrollPaneReservas, scrollPaneReservas.getHeight());
 		        

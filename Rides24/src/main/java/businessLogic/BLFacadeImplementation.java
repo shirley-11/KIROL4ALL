@@ -254,6 +254,13 @@ public class BLFacadeImplementation  implements BLFacade {
     	return r;
 	}
     
+	@WebMethod 
+	public List<Socio> getSocios() {
+		dbManager.open();
+		List<Socio> r = dbManager.getSocios();
+    	dbManager.close();
+    	return r;
+	}
 
 }
 

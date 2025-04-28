@@ -708,6 +708,18 @@ public void open(){
 		
 	}
 	
+	public List<Socio> getSocios() {
+		System.out.println(">> DataAccess: getSocios");
+		List<Socio> res = new ArrayList<>();
+		
+		TypedQuery<Socio> query = db.createQuery("SELECT s FROM Socio s",Socio.class);   
+		List<Socio> socios = query.getResultList();
+		for (Socio s:socios){
+				res.add(s);
+		}		
+		return res;
+	}
+	
 	
 	
 	

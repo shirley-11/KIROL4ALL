@@ -175,4 +175,10 @@ public interface BLFacade  {
 	 */
 	@WebMethod public Factura crearFactura(int id, Socio sociof, String date, List<Reserva> reservas) throws IdAlreadyExistsException;
 	
+	/**
+	 * Metodo que devuelve los socios
+	 */
+	@WebMethod public List<Socio> getSocios();
+	
+	
 }
