@@ -3,6 +3,7 @@ package domain;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -73,10 +74,30 @@ public class Reserva implements Serializable{
 		return "Reserva: " + idReserva + 
 				 "|| Sesion: " + sesionReserva.getActividad().getNombre()+" el "+ fechaFormateadaS + " a las " + sesionReserva.getHoraImpartición()
 				
-				+ " || fechaReserva: " + fechaFormateadaR + ", estado: " + estadoReserva ;
+				+  " Precio: " + sesionReserva.getActividad().getPrecio()  +  " || fechaReserva: " + fechaFormateadaR + ", estado: " + estadoReserva ;
+	}
+
+	
+	///////PARA QUE FUNCIONE BIEN EL CONTAINS//////////
+	@Override
+	public int hashCode() {
+		return Objects.hash(idReserva);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Reserva other = (Reserva) obj;
+		return idReserva == other.idReserva;
 	}
 	
 	
+
 	
 	
 	

@@ -1,0 +1,760 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-30 14:52:34 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 1644@LAPTOP-9IP7ANLF
+
+[2025-04-30 14:52:34 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-30 14:52:34 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-30 14:52:34 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-30 14:52:34 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-30 14:52:34 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-30 14:52:34 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-30 14:52:34 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-30 14:52:34 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-30 14:52:34 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-30 14:52:34 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-30 14:52:34 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-30 14:52:34 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-30 14:52:34 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-30 14:52:34 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-30 14:52:34 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-30 14:52:34 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-30 14:52:34 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-30 14:52:34 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-30 14:52:34 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-30 14:52:34 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-30 14:52:34 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-30 15:00:30 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 14760@LAPTOP-9IP7ANLF
+
+[2025-04-30 15:00:30 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-30 15:00:30 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-30 15:00:30 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-30 15:00:30 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-30 15:00:30 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-30 15:00:30 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-30 15:00:30 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-30 15:00:30 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-30 15:00:30 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-30 15:00:30 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-30 15:00:30 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-30 15:00:30 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-30 15:00:30 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-30 15:00:30 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-30 15:00:30 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-30 15:00:30 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-30 15:00:30 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-30 15:00:30 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-30 15:00:30 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-30 15:00:30 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-30 15:00:30 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+[2025-04-30 15:01:02 #23 type.registry] 
+New type domain.Factura
+
+[2025-04-30 15:01:02 #24 type] 
+Type domain.Factura is not enhanced.
+
+[2025-04-30 15:01:34 #25 *] 
+java.lang.NullPointerException: Cannot invoke "com.objectdb.o.VAL.J(com.objectdb.o.BYR, boolean)" because "<local2>" is null
+	at com.objectdb.o.EXR$e.c(EXR.java:190)
+	at com.objectdb.o.VAR.aB(VAR.java:887)
+	at com.objectdb.o.VAR.aA(VAR.java:830)
+	at com.objectdb.o.BCN.o(BCN.java:305)
+	at com.objectdb.o.BCN.Vz(BCN.java:264)
+	at com.objectdb.o.PBI.C(PBI.java:146)
+	at com.objectdb.o.PBI.q(PBI.java:115)
+	at com.objectdb.o.OBI.VC(OBI.java:244)
+	at com.objectdb.o.BQI.VM(BQI.java:151)
+	at com.objectdb.o.TQI.VM(TQI.java:69)
+	at com.objectdb.o.PRG.ai(PRG.java:784)
+	at com.objectdb.o.PRG.ag(PRG.java:713)
+	at com.objectdb.o.PRG.af(PRG.java:555)
+	at com.objectdb.o.QRM.U9(QRM.java:286)
+	at com.objectdb.o.MST.U9(MST.java:988)
+	at com.objectdb.o.WRA.U9(WRA.java:311)
+	at com.objectdb.o.WSM.U9(WSM.java:115)
+	at com.objectdb.o.QRR.g(QRR.java:247)
+	at com.objectdb.o.QRR.f(QRR.java:153)
+	at com.objectdb.jpa.JpaQuery.getResultList(JpaQuery.java:719)
+	at dataAccess.DataAccess.crearFactura(DataAccess.java:728)
+	at businessLogic.BLFacadeImplementation.crearFactura(BLFacadeImplementation.java:260)
+	at gui.EnviarFacturaGUI$6.actionPerformed(EnviarFacturaGUI.java:242)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2313)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:297)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6617)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6382)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2264)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4993)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2322)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4825)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4934)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4563)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4504)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2308)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2773)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4825)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-30 15:04:06 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 13204@LAPTOP-9IP7ANLF
+
+[2025-04-30 15:04:06 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-30 15:04:06 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-30 15:04:06 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-30 15:04:06 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-30 15:04:06 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-30 15:04:06 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-30 15:04:06 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-30 15:04:06 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-30 15:04:06 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-30 15:04:06 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-30 15:04:06 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-30 15:04:06 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-30 15:04:06 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-30 15:04:06 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-30 15:04:06 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-30 15:04:06 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-30 15:04:06 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-30 15:04:06 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-30 15:04:06 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-30 15:04:06 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-30 15:04:06 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+[2025-04-30 15:04:23 #23 type.registry] 
+New type domain.Factura
+
+[2025-04-30 15:04:23 #24 type] 
+Type domain.Factura is not enhanced.
+
+[2025-04-30 15:04:49 #25 *] 
+java.lang.NullPointerException: Cannot invoke "com.objectdb.o.VAL.J(com.objectdb.o.BYR, boolean)" because "<local2>" is null
+	at com.objectdb.o.EXR$e.c(EXR.java:190)
+	at com.objectdb.o.VAR.aB(VAR.java:887)
+	at com.objectdb.o.VAR.aA(VAR.java:830)
+	at com.objectdb.o.BCN.o(BCN.java:305)
+	at com.objectdb.o.BCN.Vz(BCN.java:264)
+	at com.objectdb.o.PBI.C(PBI.java:146)
+	at com.objectdb.o.PBI.q(PBI.java:115)
+	at com.objectdb.o.OBI.VC(OBI.java:244)
+	at com.objectdb.o.BQI.VM(BQI.java:151)
+	at com.objectdb.o.TQI.VM(TQI.java:69)
+	at com.objectdb.o.PRG.ai(PRG.java:784)
+	at com.objectdb.o.PRG.ag(PRG.java:713)
+	at com.objectdb.o.PRG.af(PRG.java:555)
+	at com.objectdb.o.QRM.U9(QRM.java:286)
+	at com.objectdb.o.MST.U9(MST.java:988)
+	at com.objectdb.o.WRA.U9(WRA.java:311)
+	at com.objectdb.o.WSM.U9(WSM.java:115)
+	at com.objectdb.o.QRR.g(QRR.java:247)
+	at com.objectdb.o.QRR.f(QRR.java:153)
+	at com.objectdb.jpa.JpaQuery.getResultList(JpaQuery.java:719)
+	at dataAccess.DataAccess.crearFactura(DataAccess.java:730)
+	at businessLogic.BLFacadeImplementation.crearFactura(BLFacadeImplementation.java:260)
+	at gui.EnviarFacturaGUI$6.actionPerformed(EnviarFacturaGUI.java:242)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2313)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:297)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6617)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6382)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2264)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4993)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2322)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4825)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4934)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4563)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4504)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2308)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2773)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4825)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-30 15:10:50 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 1128@LAPTOP-9IP7ANLF
+
+[2025-04-30 15:10:50 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-30 15:10:50 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-30 15:10:50 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-30 15:10:50 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-30 15:10:50 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-30 15:10:50 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-30 15:10:50 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-30 15:10:50 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-30 15:10:50 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-30 15:10:50 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-30 15:10:50 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-30 15:10:50 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-30 15:10:50 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-30 15:10:50 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-30 15:10:50 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-30 15:10:50 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-30 15:10:50 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-30 15:10:50 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-30 15:10:50 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-30 15:10:50 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-30 15:10:50 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+[2025-04-30 15:11:07 #23 type.registry] 
+New type domain.Factura
+
+[2025-04-30 15:11:07 #24 type] 
+Type domain.Factura is not enhanced.
+
+[2025-04-30 15:11:28 #25 *] 
+java.lang.NullPointerException: Cannot invoke "com.objectdb.o.VAL.J(com.objectdb.o.BYR, boolean)" because "<local2>" is null
+	at com.objectdb.o.EXR$e.c(EXR.java:190)
+	at com.objectdb.o.VAR.aB(VAR.java:887)
+	at com.objectdb.o.VAR.aA(VAR.java:830)
+	at com.objectdb.o.BCN.o(BCN.java:305)
+	at com.objectdb.o.BCN.Vz(BCN.java:264)
+	at com.objectdb.o.PBI.C(PBI.java:146)
+	at com.objectdb.o.PBI.q(PBI.java:115)
+	at com.objectdb.o.OBI.VC(OBI.java:244)
+	at com.objectdb.o.BQI.VM(BQI.java:151)
+	at com.objectdb.o.TQI.VM(TQI.java:69)
+	at com.objectdb.o.PRG.ai(PRG.java:784)
+	at com.objectdb.o.PRG.ag(PRG.java:713)
+	at com.objectdb.o.PRG.af(PRG.java:555)
+	at com.objectdb.o.QRM.U9(QRM.java:286)
+	at com.objectdb.o.MST.U9(MST.java:988)
+	at com.objectdb.o.WRA.U9(WRA.java:311)
+	at com.objectdb.o.WSM.U9(WSM.java:115)
+	at com.objectdb.o.QRR.g(QRR.java:247)
+	at com.objectdb.o.QRR.f(QRR.java:153)
+	at com.objectdb.jpa.JpaQuery.getResultList(JpaQuery.java:719)
+	at dataAccess.DataAccess.crearFactura(DataAccess.java:730)
+	at businessLogic.BLFacadeImplementation.crearFactura(BLFacadeImplementation.java:260)
+	at gui.EnviarFacturaGUI$6.actionPerformed(EnviarFacturaGUI.java:244)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2313)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:297)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6617)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6382)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2264)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4993)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2322)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4825)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4934)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4563)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4504)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2308)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2773)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4825)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-30 15:13:07 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 17576@LAPTOP-9IP7ANLF
+
+[2025-04-30 15:13:07 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-30 15:13:07 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-30 15:13:07 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-30 15:13:07 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-30 15:13:07 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-30 15:13:07 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-30 15:13:07 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-30 15:13:07 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-30 15:13:07 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-30 15:13:07 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-30 15:13:07 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-30 15:13:07 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-30 15:13:07 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-30 15:13:07 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-30 15:13:07 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-30 15:13:07 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-30 15:13:07 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-30 15:13:07 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-30 15:13:07 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-30 15:13:07 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-30 15:13:07 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+[2025-04-30 15:13:33 #23 type.registry] 
+New type domain.Factura
+
+[2025-04-30 15:13:33 #24 type] 
+Type domain.Factura is not enhanced.
+
+[2025-04-30 15:13:54 #25 *] 
+java.lang.NullPointerException: Cannot invoke "com.objectdb.o.VAL.J(com.objectdb.o.BYR, boolean)" because "<local2>" is null
+	at com.objectdb.o.EXR$e.c(EXR.java:190)
+	at com.objectdb.o.VAR.aB(VAR.java:887)
+	at com.objectdb.o.VAR.aA(VAR.java:830)
+	at com.objectdb.o.BCN.o(BCN.java:305)
+	at com.objectdb.o.BCN.Vz(BCN.java:264)
+	at com.objectdb.o.PBI.C(PBI.java:146)
+	at com.objectdb.o.PBI.q(PBI.java:115)
+	at com.objectdb.o.OBI.VC(OBI.java:244)
+	at com.objectdb.o.BQI.VM(BQI.java:151)
+	at com.objectdb.o.TQI.VM(TQI.java:69)
+	at com.objectdb.o.PRG.ai(PRG.java:784)
+	at com.objectdb.o.PRG.ag(PRG.java:713)
+	at com.objectdb.o.PRG.af(PRG.java:555)
+	at com.objectdb.o.QRM.U9(QRM.java:286)
+	at com.objectdb.o.MST.U9(MST.java:988)
+	at com.objectdb.o.WRA.U9(WRA.java:311)
+	at com.objectdb.o.WSM.U9(WSM.java:115)
+	at com.objectdb.o.QRR.g(QRR.java:247)
+	at com.objectdb.o.QRR.f(QRR.java:153)
+	at com.objectdb.jpa.JpaQuery.getResultList(JpaQuery.java:719)
+	at dataAccess.DataAccess.crearFactura(DataAccess.java:731)
+	at businessLogic.BLFacadeImplementation.crearFactura(BLFacadeImplementation.java:260)
+	at gui.EnviarFacturaGUI$6.actionPerformed(EnviarFacturaGUI.java:244)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2313)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:297)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6617)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6382)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2264)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4993)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2322)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4825)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4934)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4563)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4504)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2308)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2773)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4825)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-30 15:15:39 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 17140@LAPTOP-9IP7ANLF
+
+[2025-04-30 15:15:40 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-30 15:15:40 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-30 15:15:40 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-30 15:15:40 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-30 15:15:40 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-30 15:15:40 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-30 15:15:40 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-30 15:15:40 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-30 15:15:40 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-30 15:15:40 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-30 15:15:40 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-30 15:15:40 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-30 15:15:40 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-30 15:15:40 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-30 15:15:40 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-30 15:15:40 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-30 15:15:40 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-30 15:15:40 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-30 15:15:40 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-30 15:15:40 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-30 15:15:40 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+[2025-04-30 15:15:55 #23 type.registry] 
+New type domain.Factura
+
+[2025-04-30 15:15:55 #24 type] 
+Type domain.Factura is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2025-04-30 15:20:44 #1 store] 
+Database 'C:\Users\Shirley\git\repository\polideportivo\Rides24\src\main\resources\rides.temp' is opened by 5208@LAPTOP-9IP7ANLF
+
+[2025-04-30 15:20:44 #2 type.registry] 
+New type domain.Driver
+
+[2025-04-30 15:20:44 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2025-04-30 15:20:44 #4 type.registry] 
+New type domain.Ride
+
+[2025-04-30 15:20:44 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2025-04-30 15:20:44 #6 type.registry] 
+New type domain.Socio
+
+[2025-04-30 15:20:44 #7 type] 
+Type domain.Socio is not enhanced.
+
+[2025-04-30 15:20:44 #8 type.registry] 
+New type domain.Sala
+
+[2025-04-30 15:20:44 #9 type] 
+Type domain.Sala is not enhanced.
+
+[2025-04-30 15:20:44 #10 type.registry] 
+New type domain.Sesion
+
+[2025-04-30 15:20:44 #11 type] 
+Type domain.Sesion is not enhanced.
+
+[2025-04-30 15:20:44 #12 type.registry] 
+New type domain.Reserva
+
+[2025-04-30 15:20:44 #13 type.registry] 
+New type domain.Actividad
+
+[2025-04-30 15:20:44 #14 type] 
+Type domain.Reserva is not enhanced.
+
+[2025-04-30 15:20:44 #15 type] 
+Type domain.Actividad is not enhanced.
+
+[2025-04-30 15:20:44 #16 type.registry] 
+New type domain.Encargado
+
+[2025-04-30 15:20:44 #17 type] 
+Type domain.Encargado is not enhanced.
+
+[2025-04-30 15:20:44 #18 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2025-04-30 15:20:44 #19 type.registry] 
+New type java.util.Vector<domain.Ride>
+
+[2025-04-30 15:20:44 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2025-04-30 15:20:44 #21 type.registry] 
+New type java.util.ArrayList<domain.Sesion>
+
+[2025-04-30 15:20:44 #22 type.registry] 
+New type java.util.ArrayList<domain.Reserva>
+
+[2025-04-30 15:20:57 #23 type.registry] 
+New type domain.Factura
+
+[2025-04-30 15:20:57 #24 type] 
+Type domain.Factura is not enhanced.
+

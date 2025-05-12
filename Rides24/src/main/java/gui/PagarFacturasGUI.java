@@ -13,6 +13,7 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
 import javax.swing.SwingConstants;
+import javax.swing.Timer;
 
 import businessLogic.BLFacade;
 
@@ -96,7 +97,9 @@ public class PagarFacturasGUI extends JPanel {
 		btnPagar = new JButton("Pagar: ");//////////////////////////////////////////////////////////////BOTON PAGAR
 		btnPagar.setEnabled(false);
 		btnPagar.addActionListener(new ActionListener() {/////PULSAR
-			public void actionPerformed(ActionEvent e) {				
+			public void actionPerformed(ActionEvent e) {
+				
+				/**
 				try {
 					BLFacade bl = MainGUIKirol.getBusinessLogic();
 					String pago = bl.pagarFactura(facturaSeleccionada.getIdFactura());
@@ -111,6 +114,37 @@ public class PagarFacturasGUI extends JPanel {
 				btnPagar.setEnabled(false);
 				btnPagar.setText("Pagar: ");
 				
+				*/
+				
+				 lblRespuestaBoton.setText("Procesando el pago . . .");
+				 btnPagar.setEnabled(false);
+				 btnVolver.setEnabled(false);
+
+				    // Crear un Timer que espera 5 segundos (5000 ms)
+				    Timer timer = new Timer(5000, new ActionListener() {
+				        @Override
+				        public void actionPerformed(ActionEvent evt) {
+				            try {
+				                BLFacade bl = MainGUIKirol.getBusinessLogic();
+				                String pago = bl.pagarFactura(facturaSeleccionada.getIdFactura());
+				                lblRespuestaBoton.setText(pago);
+				            } catch (ErrorPagoException ePagoHaIdoMal) {
+				                lblRespuestaBoton.setText(ePagoHaIdoMal.getMessage());
+				            }
+
+				            facturasInfo.clear();
+				            BLFacade bl = MainGUIKirol.getBusinessLogic();
+				            List<Factura> facturas = bl.getFacturas(s);
+				            facturasInfo.addAll(facturas);
+				            btnPagar.setEnabled(false);
+				            btnVolver.setEnabled(true);
+				            btnPagar.setText("Pagar: ");
+				        }
+				    });
+
+				    timer.setRepeats(false); // Para que se ejecute solo una vez
+				    timer.start();
+				
 			}
 		});
 		btnPagar.addMouseListener(new MouseAdapter() {/////CURSOR
@@ -120,7 +154,7 @@ public class PagarFacturasGUI extends JPanel {
 			}
 		});
 		btnPagar.setFont(new Font("Tahoma", Font.BOLD, 13));		
-		btnPagar.setBounds(238, 225, 132, 38);
+		btnPagar.setBounds(197, 225, 243, 38);
 		add(btnPagar);	
 		
 		btnVolver = new JButton("Volver");//////////////////////////////////////////////////////////////BOTON VOLVER

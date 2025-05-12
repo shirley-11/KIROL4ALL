@@ -171,6 +171,11 @@ public interface BLFacade  {
 	@WebMethod public List<Actividad> getActividades();
 	
 	/**
+	 * Metodo que devuelve las reservasNoFacturadas del socio
+	 */
+	@WebMethod public List<Reserva> getReservasNoFacturadas (Socio s);
+	
+	/**
 	 * Metodo que crea una factura
 	 */
 	@WebMethod public Factura crearFactura(int id, Socio sociof, String date, List<Reserva> reservas) throws IdAlreadyExistsException;

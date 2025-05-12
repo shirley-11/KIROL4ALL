@@ -570,6 +570,7 @@ public void open(){
 		
 		List<Factura> facturas = queryFactura.getResultList();
 		for (Factura f:facturas){
+			System.out.println("Reservas cargadas: " + f.getStringReservas());
 			res.add(f);
 		}		
 		return res;
@@ -608,6 +609,7 @@ public void open(){
 	}
 	
 	public Actividad añadirActividad(String nombre, int gExig, int precio) throws ActAlreadyExistsException {
+		System.out.println(">> DataAccess: añadirActividad");
 		Actividad existente = db.find(Actividad.class, nombre);
 		if(existente!=null) {
 			throw new ActAlreadyExistsException("Esta actividad ya existe.");
@@ -622,6 +624,8 @@ public void open(){
 	}
 	
 	public Sesion añadirSesion(Actividad actividad, Sala sala, String date, String horaImparticion) throws ActAlreadyExistsException{
+		System.out.println(">> DataAccess: añadirSesion");
+		
 		TypedQuery<Sesion> query = db.createQuery("SELECT s FROM Sesion s WHERE s.actividad=?1 AND s.sala=?2 AND s.date=?3 AND s.horaImpartición=?4",Sesion.class);   
 		query.setParameter(1, actividad);
 		query.setParameter(2, sala);
@@ -679,32 +683,79 @@ public void open(){
 		return res;
 	}
 	
+	
+	//////////////////////////
+	public List<Reserva> getReservasNoFacturadas (Socio s){
+		List<Reserva> res = new ArrayList<>();
+		
+		System.out.println(">> DataAccess: getReservasNoFacturadas");
+	    
+	    Socio socioDB = db.find(Socio.class, s.getCorreo());
+	    //todas reservas
+	    TypedQuery<Reserva> query = db.createQuery("SELECT r FROM Reserva r WHERE r.socioReserva=?1 ORDER BY r.fechaReserva, r.idReserva",Reserva.class);   
+		query.setParameter(1, socioDB);
+		List<Reserva> reservasTodas = query.getResultList();
+	    
+		TypedQuery<Factura> q = db.createQuery("SELECT f FROM Factura f", Factura.class);
+		q.getResultList();
+
+		//System.out.println(">> DataAccess: COMPROBAR QUE SÍ ESTÁ FACTURA EN OBJECTDB");
+		// reservas del socio que YA están en alguna factura
+	    TypedQuery<Reserva> queryReservasFacturadas = db.createQuery("SELECT res FROM Factura f JOIN f.reservasPagar res WHERE f.socioFac = ?1 ORDER BY res.fechaReserva, res.idReserva",Reserva.class);
+	    queryReservasFacturadas.setParameter(1, socioDB);	    
+	    List<Reserva> reservasFacturadas = queryReservasFacturadas.getResultList();
+
+	    // devolver sólo las que NO están facturadas
+	    for (Reserva r : reservasTodas) {
+	        if (!reservasFacturadas.contains(r)) {
+	            res.add(r);
+	        }
+	    }
+		
+		return res;
+	}
+	
+	
+	
+	
 	public Factura crearFactura(int id, Socio sociof, String date, List<Reserva> reservas) throws IdAlreadyExistsException {
+		System.out.println(">> DataAccess: crearFactura");
 		Factura facturaExiste = db.find(Factura.class, id);
 		
-		if (facturaExiste != null) {
-			throw new IdAlreadyExistsException ("Este id lo tiene una factura existente");		
-		}
+		if (reservas == null || reservas.isEmpty()) throw new IdAlreadyExistsException ("No hay reservas a facturar");
 		else {
-			TypedQuery<Factura> query2 = db.createQuery("SELECT f FROM Factura f WHERE f.socioFac=?1 AND f.reservasPagar=?2", Factura.class);   
-			Socio s = db.find(Socio.class, sociof.getCorreo());			
-			query2.setParameter(1, s);
-			query2.setParameter(2, reservas);
-			List<Factura> facturas = query2.getResultList();
-			if(!facturas.isEmpty()){
-				throw new IdAlreadyExistsException("Estas reservas ya han sido facturadas");
+			if (facturaExiste != null) {
+				throw new IdAlreadyExistsException ("Este id lo tiene una factura existente");		
 			}
 			else {
 				db.getTransaction().begin();
-				java.sql.Date fechaFactura = this.convertirStringADate(date);
-				facturaExiste = new Factura (id, s, fechaFactura, reservas);
+				Socio socioDB = db.find(Socio.class, sociof.getCorreo());
+				java.sql.Date fechaFactura = this.convertirStringADate(date);				
+				facturaExiste = new Factura (id, socioDB, fechaFactura, reservas);
+				facturaExiste.setReservasPagar(reservas); //////reservas de la factura
+				int precioTotal = 0;
+				for (Reserva reservaPagar: reservas) {//////////////PRECIO FACTURA
+					if(reservaPagar.getEstadoReserva().equals("OK")) {
+						precioTotal = precioTotal + reservaPagar.getSesionReserva().getActividad().getPrecio();
+					}		
+				}
+				facturaExiste.setPrecioTotal(precioTotal);
+				
+				
 				db.persist(facturaExiste);
+				System.out.println("Reservas cargadas: " + (db.find(Factura.class, facturaExiste.getIdFactura())).getStringReservas());
 				db.getTransaction().commit();
+				
+				
+				
+				
 				return db.find(Factura.class, facturaExiste.getIdFactura());
+				
 				
 			}
 			
 		}
+		
 		
 	}
 	
@@ -716,7 +767,8 @@ public void open(){
 		List<Socio> socios = query.getResultList();
 		for (Socio s:socios){
 				res.add(s);
-		}		
+		}	
+		
 		return res;
 	}
 	

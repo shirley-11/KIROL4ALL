@@ -3,6 +3,8 @@ package gui;
 import javax.swing.JPanel;
 
 import domain.Encargado;
+import domain.Factura;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -14,8 +16,12 @@ import javax.swing.JList;
 import domain.Reserva;
 import domain.Sala;
 import domain.Socio;
+import exceptions.ActAlreadyExistsException;
+import exceptions.IdAlreadyExistsException;
 
 import javax.swing.JComboBox;
+
+import domain.API_Correo;
 import domain.Actividad;
 import javax.swing.JTextField;
 import javax.swing.DefaultComboBoxModel;
@@ -32,6 +38,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class EnviarFacturaGUI extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -43,8 +51,8 @@ public class EnviarFacturaGUI extends JPanel {
 	
 	private JComboBox<Socio> comboBoxSocios;
 	private DefaultComboBoxModel<Socio> socios = new DefaultComboBoxModel<Socio>();
-	private Socio socioSeleccionado = null;
-	private List<Reserva> reservasSocio;
+	private Socio socioSeleccionado;
+
 	
 	private JComboBox<String> comboBoxFecha;
 	private DefaultComboBoxModel<String> fechas = new DefaultComboBoxModel<String>();
@@ -59,6 +67,8 @@ public class EnviarFacturaGUI extends JPanel {
 	
 	
 	private JButton btnCrearFactura;
+	Factura factura;
+	
 	private JButton btnEnviarPorCorreo;
 	private JButton btnVolver;
 	
@@ -119,7 +129,7 @@ public class EnviarFacturaGUI extends JPanel {
 			
 		lblRespuestaBoton = new JLabel("");
 		lblRespuestaBoton.setHorizontalAlignment(SwingConstants.CENTER);
-		lblRespuestaBoton.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblRespuestaBoton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblRespuestaBoton.setBounds(105, 324, 370, 41);
 		add(lblRespuestaBoton);
 		
@@ -131,13 +141,13 @@ public class EnviarFacturaGUI extends JPanel {
 		BLFacade bl = MainGUIKirol.getBusinessLogic();
 		socios.addAll(bl.getSocios());
 		comboBoxSocios.setModel(socios);
-		comboBoxSocios.setSelectedItem(null);
 		
 		comboBoxSocios.addActionListener(new ActionListener() {///////PULSAR
 			public void actionPerformed(ActionEvent e) {
 				socioSeleccionado = (Socio) comboBoxSocios.getSelectedItem();
 				reservasInfo.clear();
-				reservasSocio = bl.getReservas(socioSeleccionado);
+				///List<Reserva> reservasSocio = bl.getReservas(socioSeleccionado);
+				List<Reserva> reservasSocio = bl.getReservasNoFacturadas(socioSeleccionado);
 				reservasInfo.addAll(reservasSocio);
 			}
 		});
@@ -174,6 +184,40 @@ public class EnviarFacturaGUI extends JPanel {
 		
 		
 		textFieldID = new JTextField();//////////////////////////////////////////////////////////////TEXTFIELD ID
+		textFieldID.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char c = e.getKeyChar(); //carácter que se quiere añadir pero no está en el texto todavía
+
+		        // Solo permitir números
+		        if (!Character.isDigit(c)) {
+		            e.consume();
+		            return;
+		        }
+
+		        String textoActual = textFieldID.getText().trim();
+
+		        // Solo permitir 4 digitos
+		        if (textoActual.length() >= 4) {
+		            e.consume();
+		            return;
+		        }
+
+		        // Validar el resultado 
+		        String resultado = textoActual + c;
+		        try {
+		            int valor = Integer.parseInt(resultado);
+		            //if (valor < 1 || valor > 9999) {
+		            if (valor > 9999) {
+		                e.consume();
+		            }
+		        } catch (NumberFormatException ex) {
+		            e.consume(); // Por si acaso
+		        }
+			}
+		});
+		
+		
 		textFieldID.setBounds(513, 51, 60, 41);
 		add(textFieldID);
 		textFieldID.setColumns(10);
@@ -191,9 +235,33 @@ public class EnviarFacturaGUI extends JPanel {
 		
 		
 		btnCrearFactura = new JButton("Crear Factura");//////////////////////////////////////////////////////////////BOTON CREAR
+		btnCrearFactura.setEnabled(true);
 		btnCrearFactura.addActionListener(new ActionListener() {///////PULSAR
 			public void actionPerformed(ActionEvent e) {
-				
+				if(socioSeleccionado!=null && fechaSeleccionada!=null && !textFieldID.getText().trim().isEmpty()) {
+					try {
+						int idFact = Integer.parseInt(textFieldID.getText());
+						List<Reserva> reservasSocio = bl.getReservasNoFacturadas(socioSeleccionado);
+						if (reservasSocio == null) lblRespuestaBoton.setText("No hay reservas facturar");
+						else {
+							factura = bl.crearFactura(idFact, socioSeleccionado, fechaSeleccionada, reservasSocio);
+						int precioTotal = factura.getPrecioTotal();
+						lblPrecioTotal.setText("Precio total: " + precioTotal);
+						btnCrearFactura.setEnabled(false);
+						lblRespuestaBoton.setText(factura.getIdFactura() + " creada, por favor envíela");
+						btnVolver.setEnabled(false);
+						btnEnviarPorCorreo.setEnabled(true);
+						}
+						
+
+					}
+					catch (IdAlreadyExistsException eFact) {
+						lblRespuestaBoton.setText(eFact.getMessage());
+					}
+				}
+				else {
+					lblRespuestaBoton.setText("Porfavor seleccione y rellene todos los datos");
+				}
 			}
 		});
 		btnCrearFactura.addMouseListener(new MouseAdapter() {///////CURSOR
@@ -209,8 +277,24 @@ public class EnviarFacturaGUI extends JPanel {
 		
 		
 		btnEnviarPorCorreo = new JButton("Enviar por correo");//////////////////////////////////////////////////////////////BOTON ENVIAR POR CORREO
+		btnEnviarPorCorreo.setEnabled(false);
 		btnEnviarPorCorreo.addActionListener(new ActionListener() {///////PULSAR
 			public void actionPerformed(ActionEvent e) {
+				
+				API_Correo.enviarCorreo(factura);
+				
+				
+				
+				fechaSeleccionada = null;
+				comboBoxFecha.setSelectedItem(null);
+				textFieldID.setText("");
+				reservasInfo.clear();
+				lblPrecioTotal.setText("Precio total: ");
+				btnCrearFactura.setEnabled(true);
+				btnEnviarPorCorreo.setEnabled(false);
+				lblRespuestaBoton.setText(factura.getIdFactura() + " enviada ");
+				btnVolver.setEnabled(true);
+				
 			}
 		});
 		btnEnviarPorCorreo.addMouseListener(new MouseAdapter() {///////CURSOR
@@ -226,8 +310,26 @@ public class EnviarFacturaGUI extends JPanel {
 		
 		
 		btnVolver = new JButton("Volver");//////////////////////////////////////////////////////////////VOLVER
+		btnVolver.setEnabled(true);
 		btnVolver.addActionListener(new ActionListener() {///////PULSAR
 			public void actionPerformed(ActionEvent e) {
+				lblRespuestaBoton.setText("");
+				//socioSeleccionado = null;
+				//comboBoxSocios.removeAll();
+				//comboBoxSocios.setSelectedItem(null);
+				fechaSeleccionada = null;
+				comboBoxFecha.setSelectedItem(null);
+				reservasInfo.clear();
+				textFieldID.setText("");
+				lblPrecioTotal.setText("Precio total: ");
+				///reservasSocio = null;
+				btnCrearFactura.setEnabled(true);
+				factura = null;
+				btnEnviarPorCorreo.setEnabled(false);
+				
+				mainGUIKirol.enseñarEncargadoMenu(enc);
+				
+				
 			}
 		});
 		btnVolver.addMouseListener(new MouseAdapter() {///////CURSOR

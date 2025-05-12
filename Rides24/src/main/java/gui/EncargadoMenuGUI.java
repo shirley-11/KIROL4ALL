@@ -81,6 +81,11 @@ public class EncargadoMenuGUI extends JPanel {
 				
 		
 		btnEnviarFacturas = new JButton("Enviar facturas");//////////////////////////////////////////////////////////////BTNENVIAR FACTURAS
+		btnEnviarFacturas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				mainGUIKirol.enseñarEnviarFactura(enc);
+			}
+		});
 		btnEnviarFacturas.addMouseListener(new MouseAdapter() {////////////CURSOR MANO
 			@Override
 			public void mouseEntered(MouseEvent e) {

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -62,31 +63,41 @@ public class Factura implements Serializable{
 	public void setEstado(String estado) {this.estado = estado;}
 	////////////////////////////////////////////////////////////////
 	//public int getPrecioTotal() {return precioTotal;}
-/////CALCULAR EL PRECIO DE LAS RESERVAS///////////////////////
-	public int getPrecioTotal() {
-		for (Reserva reservaPagar: reservasPagar) {
-			if(reservaPagar.getEstadoReserva().equals("OK")) {
-				precioTotal = precioTotal + reservaPagar.getSesionReserva().getActividad().getPrecio();
-			}		
-		}		
-		return precioTotal;
-	}
-	
+	/////CALCULAR EL PRECIO DE LAS RESERVAS///////////////////////
+	public int getPrecioTotal() {return precioTotal;}	
 	public void setPrecioTotal(int precioTotal) {this.precioTotal = precioTotal;}
 	////////////////////////////
 	public Date getFechaFac() {return fechaFac;}
 	public void setFechaFac(Date fechaFac) {this.fechaFac = fechaFac;}
 	////////////////////////////
+	public List<Reserva> getReservasPagar() {
+		return reservasPagar;
+	}
 
+	public void setReservasPagar(List<Reserva> reservasPagar) {
+		this.reservasPagar = reservasPagar;
+	}
+
+	/////////////////////////////7
+	public String getStringReservas () {
+		String res = "";
+		for(Reserva r : reservasPagar) {
+			res = res + r.toString() + "   \n";
+		}
+		return res;
+	}
+	
 	@Override
 	public String toString() {
 		SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
 	    String fechaFormateadaR = formatoFecha.format(fechaFac);
+	    int p =  getPrecioTotal();
+	    
 		
 		return "Factura nº: " + idFactura + " SOCIO: " + socioFac.getNombre() + " ESTADO: " + estado + " PRECIO: "
-				+ precioTotal + " RESERVAS: ||" + reservasPagar + "|| FECHA FACTURA: " + fechaFormateadaR ;
+				+ p + " RESERVAS: ||" + getStringReservas () + "|| FECHA FACTURA: " + fechaFormateadaR ;
 	}
-	
+
 	
 
 }

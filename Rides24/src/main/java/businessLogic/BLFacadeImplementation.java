@@ -247,6 +247,14 @@ public class BLFacadeImplementation  implements BLFacade {
 	}
 	
 	@WebMethod 
+	public List<Reserva> getReservasNoFacturadas (Socio s) {
+		dbManager.open();
+		List<Reserva> r = dbManager.getReservasNoFacturadas(s);
+    	dbManager.close();
+    	return r;
+	}
+	
+	@WebMethod 
 	public Factura crearFactura(int id, Socio sociof, String date, List<Reserva> reservas) throws IdAlreadyExistsException {
 		dbManager.open();
 		Factura r = dbManager.crearFactura(id, sociof, date, reservas);

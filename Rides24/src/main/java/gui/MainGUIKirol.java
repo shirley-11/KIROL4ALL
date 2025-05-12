@@ -251,5 +251,10 @@ public class MainGUIKirol extends JFrame {
 		cardLayout.show(cardPanel, "PLANIFICAR");
 		setTitle(enc.getNombre());
 	}
-	
+	public void enseñarEnviarFactura(Encargado enc) {
+		EnviarFacturaGUI enviarFPanel = new EnviarFacturaGUI(this, enc);
+		cardPanel.add(enviarFPanel, "ENVIARF");
+		cardLayout.show(cardPanel, "ENVIARF");
+		setTitle(enc.getNombre());
+	}
 }

@@ -46,5 +46,12 @@ public class Socio implements Serializable {
 	public int getNumMaxReservas() {return numMaxReservas;}
 	public void setNumMaxReservas(int n) {this.numMaxReservas = n;}
 
+	@Override
+	public String toString() {
+		return correo ;
+	}
+	
+	
+
 	
 }
