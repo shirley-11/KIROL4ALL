@@ -78,16 +78,17 @@ public class DataAccess  {
     	this.db=db;
     }
 
-    public java.sql.Date convertirStringADate(String fechaStr) { ////PARA PONER FECHAS EN FORMATO SQL
+    
+    public java.util.Date convertirStringADate(String fechaStr) {
         try {
             SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-            java.util.Date fechaUtil = formato.parse(fechaStr);
-            return new java.sql.Date(fechaUtil.getTime());
+            return formato.parse(fechaStr);
         } catch (ParseException e) {
             e.printStackTrace();
-            return null; //
+            return null;
         }
     }
+
 
 	
 	/**
@@ -133,6 +134,8 @@ public class DataAccess  {
 			///////////////////////////////////////////////////////////////////////////////PROYCTO GLOBAL////////////
 			//Crear socios			
 			Socio socio1 = new Socio ("Aitor Fernández", "socio1@gmail.com", "socio1");
+			db.persist(socio1);/////SOCIOS
+			
 			
 			//Crear Salas
 			Sala sala1Max = new Sala("Sala Máxima", 12);
@@ -140,6 +143,13 @@ public class DataAccess  {
 			Sala sala3Intermedia = new Sala("Sala Intermedia", 10);
 			Sala sala4Media = new Sala("Sala Media", 7);
 			Sala sala5Compacta = new Sala("Sala Compacta", 5);
+			
+			db.persist(sala1Max);////SALAS
+			db.persist(sala2Grande);
+			db.persist(sala3Intermedia);
+			db.persist(sala4Media);
+			db.persist(sala5Compacta);
+			
 			
 			//Crear Actividades
 			Actividad act1Pilates = new Actividad("Pilates", 3, 9);
@@ -151,49 +161,6 @@ public class DataAccess  {
 			Actividad act7GimnasiaMayores= new Actividad("Gimnasia para Mayores", 1, 5);
 			Actividad act8CiclismoIndoor= new Actividad("Ciclismo Indoor", 3, 9);
 			
-			//Crear Sesiones
-	        java.sql.Date fechaLUNES = this.convertirStringADate("07/04/2025");//LUNES	        
-			//Sesion s1LUNES = new Sesion (act2Yoga, sala1Max, fechaLUNES, "09:00");
-			Sesion s2LUNES = new Sesion (act1Pilates, sala2Grande, fechaLUNES, "10:30");
-			Sesion s3LUNES = new Sesion (act3Zumba, sala3Intermedia, fechaLUNES, "11:30");
-			Sesion s4LUNES = new Sesion (act4Spinning, sala4Media, fechaLUNES, "15:00");
-			//Sesion s5LUNES = new Sesion (act6CrossFit, sala5Compacta, fechaLUNES, "16:30");						
-			java.sql.Date fechaMARTES = this.convertirStringADate("08/04/2025");//MARTES	        
-			//Sesion s1MARTES = new Sesion (act1Pilates, sala3Intermedia, fechaMARTES, "09:00");
-			Sesion s2MARTES = new Sesion (act2Yoga, sala2Grande, fechaMARTES, "10:00");
-			Sesion s3MARTES = new Sesion (act6CrossFit, sala4Media, fechaMARTES, "11:30");
-			Sesion s4MARTES = new Sesion (act4Spinning, sala5Compacta, fechaMARTES, "15:00");
-			//Sesion s5MARTES = new Sesion (act5Boxeo, sala1Max, fechaMARTES, "16:00");
-			java.sql.Date fechaMIERCOLES = this.convertirStringADate("09/04/2025");//MIERCOLES
-			Sesion s1MIERCOLES = new Sesion (act5Boxeo, sala1Max, fechaMIERCOLES, "09:00");
-			Sesion s2MIERCOLES = new Sesion (act7GimnasiaMayores, sala4Media, fechaMIERCOLES, "18:00");
-			java.sql.Date fechaJUEVES = this.convertirStringADate("10/04/2025");//JUEVES
-			Sesion s1JUEVES = new Sesion (act3Zumba, sala3Intermedia, fechaJUEVES, "11:00");
-			Sesion s2JUEVES = new Sesion (act8CiclismoIndoor, sala2Grande, fechaJUEVES, "17:30");
-			java.sql.Date fechaVIERNES = this.convertirStringADate("11/04/2025");//VIERNES
-			Sesion s1VIERNES = new Sesion (act8CiclismoIndoor, sala1Max, fechaVIERNES, "18:30");
-			Sesion s2VIERNES = new Sesion (act5Boxeo, sala5Compacta, fechaVIERNES, "17:30");
-			java.sql.Date fechaSABADO = this.convertirStringADate("12/04/2025");//SABADO
-			Sesion s1SABADO = new Sesion (act7GimnasiaMayores, sala4Media, fechaSABADO, "09:00");
-			Sesion s2SABADO = new Sesion (act6CrossFit, sala3Intermedia, fechaSABADO, "11:00");
-			Sesion s3SABADO = new Sesion (act3Zumba, sala2Grande, fechaSABADO, "12:00");
-			java.sql.Date fechaDOMINGO = this.convertirStringADate("13/04/2025");//DOMINGO
-			Sesion s1DOMINGO = new Sesion (act1Pilates, sala5Compacta, fechaDOMINGO, "09:00");
-			Sesion s2DOMINGO = new Sesion (act2Yoga, sala5Compacta, fechaDOMINGO, "10:00");
-			Sesion s3DOMINGO = new Sesion (act8CiclismoIndoor, sala1Max, fechaDOMINGO, "10:00");
-			////////////////////////////////////////////ENCARGADOS//////////////
-			Encargado e= new Encargado("Ane Fernández", "encargado@gmail.com", "encargado");
-			
-			
-			
-			
-			
-			db.persist(socio1);/////SOCIOS
-			db.persist(sala1Max);////SALAS
-			db.persist(sala2Grande);
-			db.persist(sala3Intermedia);
-			db.persist(sala4Media);
-			db.persist(sala5Compacta);
 			db.persist(act1Pilates);///ACTIVIDADES
 			db.persist(act2Yoga);
 			db.persist(act3Zumba);			
@@ -202,16 +169,47 @@ public class DataAccess  {
 			db.persist(act6CrossFit);
 			db.persist(act7GimnasiaMayores);
 			db.persist(act8CiclismoIndoor);	
-			//db.persist(s1LUNES);////SESIONES 18 en total
+			
+			//Crear Sesiones
+	        java.util.Date fechaLUNES = this.convertirStringADate("07/04/2025");//LUNES	        
+			
+			Sesion s2LUNES = new Sesion (act1Pilates, sala2Grande, fechaLUNES, "10:30");
+			Sesion s3LUNES = new Sesion (act3Zumba, sala3Intermedia, fechaLUNES, "11:30");
+			Sesion s4LUNES = new Sesion (act4Spinning, sala4Media, fechaLUNES, "15:00");
+								
+			java.util.Date fechaMARTES = this.convertirStringADate("08/04/2025");//MARTES	        
+			
+			Sesion s2MARTES = new Sesion (act2Yoga, sala2Grande, fechaMARTES, "10:00");
+			Sesion s3MARTES = new Sesion (act6CrossFit, sala4Media, fechaMARTES, "11:30");
+			Sesion s4MARTES = new Sesion (act4Spinning, sala5Compacta, fechaMARTES, "15:00");
+			
+			java.util.Date fechaMIERCOLES = this.convertirStringADate("09/04/2025");//MIERCOLES
+			Sesion s1MIERCOLES = new Sesion (act5Boxeo, sala1Max, fechaMIERCOLES, "09:00");
+			Sesion s2MIERCOLES = new Sesion (act7GimnasiaMayores, sala4Media, fechaMIERCOLES, "18:00");
+			java.util.Date fechaJUEVES = this.convertirStringADate("10/04/2025");//JUEVES
+			Sesion s1JUEVES = new Sesion (act3Zumba, sala3Intermedia, fechaJUEVES, "11:00");
+			Sesion s2JUEVES = new Sesion (act8CiclismoIndoor, sala2Grande, fechaJUEVES, "17:30");
+			java.util.Date fechaVIERNES = this.convertirStringADate("11/04/2025");//VIERNES
+			Sesion s1VIERNES = new Sesion (act8CiclismoIndoor, sala1Max, fechaVIERNES, "18:30");
+			Sesion s2VIERNES = new Sesion (act5Boxeo, sala5Compacta, fechaVIERNES, "17:30");
+			java.util.Date fechaSABADO = this.convertirStringADate("12/04/2025");//SABADO
+			Sesion s1SABADO = new Sesion (act7GimnasiaMayores, sala4Media, fechaSABADO, "09:00");
+			Sesion s2SABADO = new Sesion (act6CrossFit, sala3Intermedia, fechaSABADO, "11:00");
+			Sesion s3SABADO = new Sesion (act3Zumba, sala2Grande, fechaSABADO, "12:00");
+			java.util.Date fechaDOMINGO = this.convertirStringADate("13/04/2025");//DOMINGO
+			Sesion s1DOMINGO = new Sesion (act1Pilates, sala5Compacta, fechaDOMINGO, "09:00");
+			Sesion s2DOMINGO = new Sesion (act2Yoga, sala5Compacta, fechaDOMINGO, "10:00");
+			Sesion s3DOMINGO = new Sesion (act8CiclismoIndoor, sala1Max, fechaDOMINGO, "10:00");
+			
 			db.persist(s2LUNES);
+			
 			db.persist(s3LUNES);
 			db.persist(s4LUNES);
-			//db.persist(s5LUNES);
-			//db.persist(s1MARTES);
+
 			db.persist(s2MARTES);
 			db.persist(s3MARTES);
 			db.persist(s4MARTES);
-			//db.persist(s5MARTES);
+
 			db.persist(s1MIERCOLES);
 			db.persist(s2MIERCOLES);
 			db.persist(s1JUEVES);
@@ -224,6 +222,18 @@ public class DataAccess  {
 			db.persist(s1DOMINGO);
 			db.persist(s2DOMINGO);
 			db.persist(s3DOMINGO);
+			////////////////////////////////////////////ENCARGADOS//////////////
+			Encargado e= new Encargado("Ane Fernández", "encargado@gmail.com", "encargado");
+			
+			
+			
+			
+			
+			
+			
+			
+		
+			
 			////////////////////ENCARGADO
 			db.persist(e);
 			/////////////////////RESERVAS PARA EL SOCIO
@@ -629,7 +639,7 @@ public void open(){
 		TypedQuery<Sesion> query = db.createQuery("SELECT s FROM Sesion s WHERE s.actividad=?1 AND s.sala=?2 AND s.date=?3 AND s.horaImpartición=?4",Sesion.class);   
 		query.setParameter(1, actividad);
 		query.setParameter(2, sala);
-		java.sql.Date dateQ = this.convertirStringADate(date);
+		java.util.Date dateQ = this.convertirStringADate(date);
 		query.setParameter(3, dateQ);
 		query.setParameter(4, horaImparticion);
 		
@@ -647,7 +657,7 @@ public void open(){
 				throw new ActAlreadyExistsException("Ya hay una sesión en este mismo lugar y hora");
 			}
 			else {
-				java.sql.Date fechaSesion = this.convertirStringADate(date);
+				java.util.Date fechaSesion = this.convertirStringADate(date);
 				Sesion s = new Sesion(actividad, sala, fechaSesion, horaImparticion);
 				db.getTransaction().begin();
 				db.persist(s);
@@ -730,7 +740,7 @@ public void open(){
 			else {
 				db.getTransaction().begin();
 				Socio socioDB = db.find(Socio.class, sociof.getCorreo());
-				java.sql.Date fechaFactura = this.convertirStringADate(date);				
+				java.util.Date fechaFactura = this.convertirStringADate(date);				
 				facturaExiste = new Factura (id, socioDB, fechaFactura, reservas);
 				facturaExiste.setReservasPagar(reservas); //////reservas de la factura
 				int precioTotal = 0;

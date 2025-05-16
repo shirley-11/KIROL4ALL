@@ -1,7 +1,7 @@
 package domain;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,16 +25,17 @@ import javax.persistence.GenerationType;
 public class Sesion implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@XmlID
+	@Id
 	@XmlJavaTypeAdapter(IntegerAdapter.class)
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idSesion;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer idSesion;
 	
-	@XmlIDREF
-	@OneToOne
+	//@XmlIDREF
+	@OneToOne(fetch = FetchType.EAGER)
 	private Actividad actividad;
 	
-	@XmlIDREF
-	@OneToOne
+	//@XmlIDREF
+	@OneToOne(fetch = FetchType.EAGER)
 	private Sala sala;
 	private Date date;
 	private String horaImpartición;	//HH:mm

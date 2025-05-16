@@ -56,22 +56,6 @@ public class MainGUIKirol extends JFrame {
 	ConsultarGUI consultarPanel;
 	protected JLabel jLabelSelectOption;
 
-	/**
-	 * Launch the application.
-	 *
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainGUIKirol frame = new MainGUIKirol();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	*/
 
 	/**
 	 * Create the frame.

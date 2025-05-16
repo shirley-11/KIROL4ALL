@@ -27,15 +27,15 @@ public class Factura implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@XmlID
-	@XmlJavaTypeAdapter(IntegerAdapter.class)
 	@Id
-	private int idFactura;
-	@XmlIDREF
+	@XmlJavaTypeAdapter(IntegerAdapter.class)
+	private Integer idFactura;
+	//@XmlIDREF
 	@OneToOne
 	private Socio socioFac;
 	private String estado;
 	private int precioTotal;
-	@XmlIDREF
+	//@XmlIDREF
 	@OneToMany (fetch = FetchType.LAZY)
 	private List<Reserva> reservasPagar = new ArrayList<Reserva>();
 	private Date fechaFac;

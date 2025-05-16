@@ -22,15 +22,16 @@ import javax.persistence.GenerationType;
 public class Reserva implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	@XmlIDREF
+	//@XmlIDREF
 	@OneToOne
 	private Socio socioReserva;
 	@XmlID
+	@Id
 	@XmlJavaTypeAdapter(IntegerAdapter.class)
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idReserva;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer idReserva;
 	
-	@XmlIDREF
+	//@XmlIDREF
 	@OneToOne
 	private Sesion sesionReserva;
 	private Date fechaReserva;
