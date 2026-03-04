@@ -39,18 +39,7 @@ Un polideportivo necesita una aplicación para gestionar:
 - **Arquitectura**: 3 capas (presentación, lógica, datos)
 
 ## Estructura del proyecto
-Rides24/
-|-- src/main/java/
-|   |-- dataAccess/
-|   |   `-- ObjectdbManagerServer.java
-|   |-- businessLogic/
-|   |   `-- BusinessLogicServer.java
-|   |-- gui/
-|   |   `-- ApplicationLauncher.java
-|   |-- domain/
-|   `-- configuration/
-|-- src/test/java/
-`-- pom.xml
+
 
 ## Instalación y ejecución en Eclipse con Maven
 
@@ -163,7 +152,7 @@ A sports center requires an application to manage:
 - **Architecture**: 3-layer architecture (presentation, business logic, data access)  
 
 ## Project Structure
-
+```
 Rides24/
 ├── src/main/java/
 │   ├── dataAccess/          (Data access layer)
@@ -175,7 +164,7 @@ Rides24/
 │   ├── domain/              (Domain classes)
 │   └── configuration/       (Configuration files)
 └── pom.xml
-
+```
 ## Installation and Execution (Eclipse + Maven)
 
 ### Prerequisites
