@@ -40,16 +40,17 @@ Un polideportivo necesita una aplicación para gestionar:
 
 ## Estructura del proyecto
 Rides24/
-├── src/main/java/
-│ ├── dataAccess/  (Capa de acceso a datos)
-│ │ └── ObjectdbManagerServer.java  (Servidor de base de datos ObjectDB)
-│ ├── businessLogic/  (Capa de lógica de negocio)
-│ │ └── BusinessLogicServer.java  (Servidor de lógica) 
-│ ├── gui/  (Capa de presentación)
-│ │ └── ApplicationLauncher.java  (Lanzador de la interfaz gráfica)
-│ ├── domain/  (Clases del dominio)
-│ └── configuration/  (Archivos de configuración)
-└── pom.xml 
+|-- src/main/java/
+|   |-- dataAccess/
+|   |   `-- ObjectdbManagerServer.java
+|   |-- businessLogic/
+|   |   `-- BusinessLogicServer.java
+|   |-- gui/
+|   |   `-- ApplicationLauncher.java
+|   |-- domain/
+|   `-- configuration/
+|-- src/test/java/
+`-- pom.xml
 
 ## Instalación y ejecución en Eclipse con Maven
 
